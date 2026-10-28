@@ -1,0 +1,121 @@
+/* ========================================================
+   Ilio Platform Portofolio Informatika UNSOED '26
+   Style Definition File (style.css)
+   ======================================================== */
+
+/* --- Base Resets & Document Flow --- */
+@layer base {
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    overscroll-behavior: none;
+  }
+  main > :first-child {
+    margin-top: 0 !important;
+  }
+  main > :last-child {
+    margin-bottom: 0 !important;
+  }
+}
+
+/* --- Scrollbar Customization --- */
+::-webkit-scrollbar {
+  display: none;
+}
+* {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+/* --- Navbar 'Submit Karya' Button Custom Styling (#6366f1) --- */
+.btn-submit-nav {
+  background-color: #6366f1 !important;
+  color: #ffffff !important;
+  border-color: #6366f1 !important;
+  font-weight: 600;
+  box-shadow: 0 1px 3px rgba(99, 102, 241, 0.25);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-submit-nav:hover {
+  background-color: #4f46e5 !important;
+  border-color: #4f46e5 !important;
+  box-shadow: 0 4px 14px rgba(99, 102, 241, 0.35);
+  transform: translateY(-1px);
+}
+
+.btn-submit-nav:active {
+  transform: translateY(0);
+}
+
+/* --- Modal & Backdrop Transition --- */
+.modal-backdrop {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  background-color: rgba(17, 28, 45, 0.5);
+  transition: opacity 0.25s ease;
+}
+
+.modal-content {
+  animation: modalFadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* --- Toast Notification Animation --- */
+.toast-notification {
+  animation: toastSlideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes toastSlideUp {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 20px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+/* --- Interactive Card States --- */
+.project-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+/* --- Form Validation Highlights --- */
+.input-field {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+.input-error {
+  border-color: #ba1a1a !important;
+  background-color: #fff8f7 !important;
+}
+
+.input-error:focus {
+  box-shadow: 0 0 0 3px rgba(186, 26, 26, 0.2) !important;
+}
+
+.input-success {
+  border-color: #006b5b !important;
+}
+
