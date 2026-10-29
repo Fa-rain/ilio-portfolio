@@ -1,155 +1,48 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="shell-type" content="web_standard" />
   <title>Ilio - Platform Portofolio Informatika UNSOED '26</title>
 
   <!-- Google Fonts: Material Symbols & Web Typography -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" />
 
-  <!-- External Stylesheet -->
+  
   <link rel="stylesheet" href="style.css" />
-
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script id="tailwind-config">
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          colors: {
-            "tertiary": "#904900",
-            "secondary-fixed-dim": "#00dfc1",
-            "primary-fixed-dim": "#c0c1ff",
-            "on-secondary-fixed": "#00201a",
-            "on-secondary-fixed-variant": "#005144",
-            "inverse-surface": "#263143",
-            "on-tertiary-fixed": "#301400",
-            "on-error": "#ffffff",
-            "secondary-container": "#26fedc",
-            "surface-container-lowest": "#ffffff",
-            "primary": "#4648d4",
-            "surface-variant": "#d8e3fb",
-            "tertiary-fixed-dim": "#ffb783",
-            "inverse-primary": "#c0c1ff",
-            "on-secondary-container": "#007261",
-            "on-tertiary-container": "#fffbff",
-            "on-secondary": "#ffffff",
-            "primary-container": "#6063ee",
-            "surface-container-highest": "#d8e3fb",
-            "surface": "#f9f9ff",
-            "surface-dim": "#cfdaf2",
-            "on-error-container": "#93000a",
-            "surface-bright": "#f9f9ff",
-            "on-primary-fixed": "#07006c",
-            "on-tertiary": "#ffffff",
-            "primary-fixed": "#e1e0ff",
-            "on-background": "#111c2d",
-            "on-surface-variant": "#464554",
-            "outline": "#767586",
-            "inverse-on-surface": "#ecf1ff",
-            "surface-container-low": "#f0f3ff",
-            "tertiary-fixed": "#ffdcc5",
-            "on-surface": "#111c2d",
-            "outline-variant": "#c7c4d7",
-            "on-primary": "#ffffff",
-            "on-primary-container": "#fffbff",
-            "tertiary-container": "#b55d00",
-            "on-primary-fixed-variant": "#2f2ebe",
-            "surface-container": "#e7eeff",
-            "background": "#f9f9ff",
-            "error": "#ba1a1a",
-            "on-tertiary-fixed-variant": "#703700",
-            "surface-tint": "#494bd6",
-            "surface-container-high": "#dee8ff",
-            "secondary-fixed": "#26fedc",
-            "secondary": "#006b5b",
-            "error-container": "#ffdad6"
-          },
-          borderRadius: {
-            "DEFAULT": "0.25rem",
-            "lg": "0.5rem",
-            "xl": "0.75rem",
-            "full": "9999px"
-          },
-          spacing: {
-            "space-2xl": "3rem",
-            "margin": "2rem",
-            "space-xl": "2rem",
-            "space-sm": "0.5rem",
-            "margin-mobile": "1rem",
-            "gutter-mobile": "1rem",
-            "space-md": "1rem",
-            "space-lg": "1.5rem",
-            "space-xs": "0.25rem",
-            "gutter": "1.5rem",
-            "space-3xl": "4.5rem"
-          },
-          fontFamily: {
-            "headline-md": ["Plus Jakarta Sans", "sans-serif"],
-            "body-sm": ["Inter", "sans-serif"],
-            "display-hero-mobile": ["Plus Jakarta Sans", "sans-serif"],
-            "code-sm": ["Inter", "monospace"],
-            "display-hero": ["Plus Jakarta Sans", "sans-serif"],
-            "body-lg": ["Inter", "sans-serif"],
-            "headline-sm": ["Plus Jakarta Sans", "sans-serif"],
-            "headline-lg": ["Plus Jakarta Sans", "sans-serif"],
-            "body-md": ["Inter", "sans-serif"],
-            "label-sm": ["Inter", "sans-serif"],
-            "headline-lg-mobile": ["Plus Jakarta Sans", "sans-serif"],
-            "label-md": ["Inter", "sans-serif"]
-          },
-          fontSize: {
-            "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
-            "body-sm": ["13px", { "lineHeight": "20px", "letterSpacing": "0em", "fontWeight": "400" }],
-            "display-hero-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
-            "code-sm": ["13px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "500" }],
-            "display-hero": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.025em", "fontWeight": "700" }],
-            "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "-0.005em", "fontWeight": "400" }],
-            "headline-sm": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
-            "headline-lg": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
-            "body-md": ["15px", { "lineHeight": "24px", "letterSpacing": "0em", "fontWeight": "400" }],
-            "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.025em", "fontWeight": "600" }],
-            "headline-lg-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
-            "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "500" }]
-          }
-        }
-      }
-    };
-  </script>
 </head>
 
-<body class="bg-surface font-body-md text-on-surface antialiased">
+<body>
   <!-- ========================================================
        TOP NAVIGATION BAR
        ======================================================== -->
-  <header class="fixed top-0 left-0 right-0 z-50 bg-surface-container-lowest/90 backdrop-blur-md border-b border-outline-variant">
-    <div class="max-w-7xl mx-auto px-margin flex items-center justify-between h-16">
+  <header class="site-header">
+    <div class="container header-container">
       
       <!-- Brand Logo & Cohort Tag -->
-      <div class="flex items-center gap-space-md">
-        <a href="#" class="font-headline-md text-headline-md tracking-tight text-primary font-bold">Ilio</a>
-        <span class="hidden sm:inline-flex items-center px-space-sm py-space-xs rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-semibold">
+      <div class="brand-wrapper">
+        <a href="#" class="brand-logo">Ilio</a>
+        <span class="cohort-tag">
           Informatics '26
         </span>
       </div>
 
       <!-- Navigation Links -->
-      <nav class="hidden md:flex items-center gap-space-xl" data-active-classes="text-primary font-semibold">
-        <a class="transition-colors text-primary font-semibold" data-path="home" href="#" aria-current="page">Home</a>
-        <a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="about" href="#kenapa-penting">About</a>
-        <a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="portfolio" href="#karya-terbaru">Portfolio</a>
+      <nav class="nav-links">
+        <a class="nav-link active" data-path="home" href="#" aria-current="page">Home</a>
+        <a class="nav-link" data-path="about" href="#kenapa-penting">About</a>
+        <a class="nav-link" id="nav-semua-karya" data-path="portfolio" href="#karya-terbaru" title="Lihat semua karya portofolio">
+          Lihat Semua Karya (<span class="nav-karya-count">6</span>)
+        </a>
       </nav>
 
       <!-- Right Action Items (Submit Button & Profile Picture) -->
-      <div class="flex items-center gap-space-md">
+      <div class="header-actions">
         <!-- 'Submit Karya' Button in Navbar with #6366f1 -->
         <a 
           href="javascript:void(0)" 
-          class="open-submit-modal btn-submit-nav inline-flex items-center justify-center h-10 px-space-lg rounded-lg font-label-md text-label-md transition-all cursor-pointer" 
+          class="open-submit-modal btn-submit-nav" 
           data-path="submit-karya"
           title="Submit Karya Baru"
         >
@@ -159,7 +52,7 @@
         <!-- Profile Photo from 'logo pp.jpg' -->
         <img 
           alt="Profile" 
-          class="w-8 h-8 rounded-full object-cover ring-1 ring-outline-variant cursor-pointer hover:ring-primary transition-all" 
+          class="profile-avatar" 
           src="logo pp.jpg" 
         />
       </div>
@@ -170,504 +63,502 @@
   <!-- ========================================================
        MAIN PAGE CONTENT
        ======================================================== -->
-  <main class="w-full pt-16 bg-surface">
-    <div class="flex flex-col w-full">
-      
-      <!-- Top Decorative Blur Gradient Backdrop -->
-      <div class="relative w-full overflow-hidden">
-        <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[980px] h-[380px] bg-gradient-to-r from-primary/10 via-secondary-container/20 to-primary-container/10 blur-3xl pointer-events-none -z-10"></div>
+  <main style="padding-top: 64px;">
+    
+    <!-- Top Decorative Blur Gradient Backdrop -->
+    <div class="hero-wrapper">
+      <div class="hero-glow-blur"></div>
 
-        <!-- 1. HERO SECTION -->
-        <section class="w-full max-w-7xl mx-auto px-margin py-space-3xl flex flex-col items-center text-center">
-          
-          <!-- Cohort Indicator Badge -->
-          <div class="inline-flex items-center gap-space-sm px-4 py-1.5 rounded-full bg-surface-container border border-outline-variant shadow-sm mb-space-lg">
-            <span class="relative flex h-2 w-2">
-              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary-fixed-dim opacity-75"></span>
-              <span class="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
-            </span>
-            <span class="font-label-sm text-label-sm text-on-surface-variant font-semibold tracking-wide uppercase">
-              Kolektif Informatika UNSOED '26
-            </span>
-          </div>
-
-          <!-- Main Hero Headline -->
-          <h1 class="font-display-hero text-display-hero md:text-[56px] md:leading-[64px] text-on-surface font-extrabold max-w-4xl tracking-tight mb-space-lg">
-            Ideas become projects.<br class="hidden sm:inline" />
-            <span class="text-primary">Projects create impact.</span>
-          </h1>
-
-          <!-- Hero Subtitle -->
-          <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed mb-space-xl">
-            Ruang etalase digital untuk merayakan inovasi, proyek rekayasa perangkat lunak, riset kecerdasan buatan, dan kreativitas mahasiswa Informatika Universitas Jenderal Soedirman angkatan 2026.
-          </p>
-
-          <!-- Action Button Row -->
-          <div class="flex flex-col sm:flex-row items-center gap-space-md mb-space-3xl w-full sm:w-auto">
-            <a class="w-full sm:w-auto inline-flex items-center justify-center gap-space-sm h-12 px-6 rounded-lg bg-secondary-container text-on-secondary-fixed font-label-md text-label-md font-semibold shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all" href="#karya-terbaru">
-              <span>Jelajahi Portofolio</span>
-              <span class="material-symbols-outlined text-lg">arrow_forward</span>
-            </a>
-            <a class="w-full sm:w-auto inline-flex items-center justify-center h-12 px-6 rounded-lg bg-surface-container-lowest text-on-surface font-label-md text-label-md font-medium border border-outline-variant shadow-sm hover:bg-surface-container-low transition-colors" href="#kenapa-penting">
-              Pelajari Lebih Lanjut
-            </a>
-          </div>
-
-          <!-- Minimalist Metric Strip (Validated Count of Works) -->
-          <div class="w-full max-w-4xl bg-surface-container-lowest rounded-xl border border-outline-variant shadow-sm p-space-lg grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-outline-variant">
-            <div class="flex flex-col items-center py-space-sm sm:py-0 px-space-md">
-              <span id="metric-karya-count" class="font-headline-lg text-headline-lg text-primary font-bold">6</span>
-              <span class="font-label-md text-label-md text-on-surface font-medium mt-1">Proyek Aktif</span>
-              <span class="font-body-sm text-body-sm text-on-surface-variant">Tervalidasi &amp; Terverifikasi</span>
-            </div>
-            <div class="flex flex-col items-center py-space-sm sm:py-0 px-space-md">
-              <span class="font-headline-lg text-headline-lg text-on-surface font-bold">120</span>
-              <span class="font-label-md text-label-md text-on-surface font-medium mt-1">Mahasiswa</span>
-              <span class="font-body-sm text-body-sm text-on-surface-variant">Kohor 2026 Purwokerto</span>
-            </div>
-            <div class="flex flex-col items-center py-space-sm sm:py-0 px-space-md">
-              <span class="font-headline-lg text-headline-lg text-primary font-bold">4</span>
-              <span class="font-label-md text-label-md text-on-surface font-medium mt-1">Peminatan Teknis</span>
-              <span class="font-body-sm text-body-sm text-on-surface-variant">SE, AI/Data, Cyber, UI/UX</span>
-            </div>
-          </div>
-
-        </section>
-      </div>
-
-      <!-- 2. SECTION: KENAPA PORTOFOLIO PENTING -->
-      <section class="w-full bg-surface-container-low border-y border-outline-variant py-space-3xl" id="kenapa-penting">
-        <div class="max-w-7xl mx-auto px-margin">
-          
-          <!-- Section Header -->
-          <div class="flex flex-col items-center text-center max-w-2xl mx-auto mb-space-2xl">
-            <span class="px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-semibold uppercase tracking-wider mb-space-xs">
-              Nilai &amp; Visi
-            </span>
-            <h2 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight mb-space-xs">
-              Kenapa Portofolio Penting?
-            </h2>
-            <p class="font-body-md text-body-md text-on-surface-variant">
-              Membangun jejak rekayasa dan membuka peluang industri sejak bangku kuliah.
-            </p>
-          </div>
-
-          <!-- 3 Benefit Cards -->
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-            
-            <!-- Benefit Card 1 -->
-            <div class="bg-surface-container-lowest rounded-xl border border-outline-variant p-space-lg shadow-sm hover:shadow-md hover:border-primary/40 transition-all flex flex-col justify-between">
-              <div>
-                <div class="w-12 h-12 rounded-lg bg-primary-fixed flex items-center justify-center text-primary mb-space-lg">
-                  <span class="material-symbols-outlined text-2xl">terminal</span>
-                </div>
-                <h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-space-sm">
-                  Validasi Kompetensi Praktis
-                </h3>
-                <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-                  Membuktikan penguasaan algoritma, arsitektur sistem, dan teknologi modern melalui hasil karya nyata yang dapat diakses publik dan recruiter.
-                </p>
-              </div>
-              <div class="pt-space-lg mt-space-md border-t border-outline-variant flex items-center gap-space-xs text-primary font-label-sm text-label-sm font-medium">
-                <span>Standar rekayasa industri</span>
-                <span class="material-symbols-outlined text-sm">check_circle</span>
-              </div>
-            </div>
-
-            <!-- Benefit Card 2 -->
-            <div class="bg-surface-container-lowest rounded-xl border border-outline-variant p-space-lg shadow-sm hover:shadow-md hover:border-secondary/40 transition-all flex flex-col justify-between">
-              <div>
-                <div class="w-12 h-12 rounded-lg bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed mb-space-lg">
-                  <span class="material-symbols-outlined text-2xl">hub</span>
-                </div>
-                <h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-space-sm">
-                  Kolaborasi Lintas Disiplin
-                </h3>
-                <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-                  Memfasilitasi pertukaran ide, pembentukan tim riset kompetisi, dan proyek open-source antar mahasiswa Informatika angkatan 2026.
-                </p>
-              </div>
-              <div class="pt-space-lg mt-space-md border-t border-outline-variant flex items-center gap-space-xs text-secondary font-label-sm text-label-sm font-medium">
-                <span>Sinergi antar-mahasiswa</span>
-                <span class="material-symbols-outlined text-sm">group</span>
-              </div>
-            </div>
-
-            <!-- Benefit Card 3 -->
-            <div class="bg-surface-container-lowest rounded-xl border border-outline-variant p-space-lg shadow-sm hover:shadow-md hover:border-primary/40 transition-all flex flex-col justify-between">
-              <div>
-                <div class="w-12 h-12 rounded-lg bg-surface-container-high flex items-center justify-center text-primary mb-space-lg">
-                  <span class="material-symbols-outlined text-2xl">rocket_launch</span>
-                </div>
-                <h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold mb-space-sm">
-                  Jembatan Karier &amp; Industri
-                </h3>
-                <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-                  Katalog siap-akses bagi mitra industri, alumni, dan institusi untuk menemukan talenta muda berbakat dari kampus UNSOED Purwokerto.
-                </p>
-              </div>
-              <div class="pt-space-lg mt-space-md border-t border-outline-variant flex items-center gap-space-xs text-primary font-label-sm text-label-sm font-medium">
-                <span>Akses mitra &amp; alumni UNSOED</span>
-                <span class="material-symbols-outlined text-sm">verified</span>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-      </section>
-
-      <!-- 3. SECTION: KARYA TERBARU (RECENT PROJECTS) -->
-      <section class="w-full max-w-7xl mx-auto px-margin py-space-3xl" id="karya-terbaru">
+      <!-- 1. HERO SECTION -->
+      <section class="container hero-content">
         
-        <!-- Section Title & Filter Tabs -->
-        <div class="flex flex-col md:flex-row md:items-end justify-between gap-space-lg mb-space-2xl">
-          <div>
-            <div class="inline-flex items-center gap-2 text-primary font-label-sm text-label-sm font-semibold uppercase tracking-wider mb-space-xs">
-              <span class="w-2 h-2 rounded-full bg-primary"></span>
-              Katalog Terkini
-            </div>
-            <h2 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">
-              Karya Terbaru
-            </h2>
-          </div>
+        <!-- Cohort Indicator Badge -->
+        <div class="cohort-badge">
+          <span class="ping-indicator">
+            <span class="ping-circle-animate"></span>
+            <span class="ping-circle-solid"></span>
+          </span>
+          <span class="badge-text">
+            Kolektif Informatika UNSOED '26
+          </span>
+        </div>
 
-          <!-- Filter Tabs -->
-          <div class="flex flex-wrap gap-2" id="filter-container">
-            <button class="filter-btn active-tab px-4 py-2 rounded-lg font-label-md text-label-md font-medium transition-all bg-primary text-on-primary shadow-sm" data-filter="all">
-              Semua
-            </button>
-            <button class="filter-btn px-4 py-2 rounded-lg font-label-md text-label-md font-medium transition-all bg-surface-container-lowest text-on-surface-variant border border-outline-variant hover:bg-surface-container-low hover:text-on-surface" data-filter="web-mobile">
-              Web &amp; Mobile
-            </button>
-            <button class="filter-btn px-4 py-2 rounded-lg font-label-md text-label-md font-medium transition-all bg-surface-container-lowest text-on-surface-variant border border-outline-variant hover:bg-surface-container-low hover:text-on-surface" data-filter="ml">
-              Machine Learning
-            </button>
-            <button class="filter-btn px-4 py-2 rounded-lg font-label-md text-label-md font-medium transition-all bg-surface-container-lowest text-on-surface-variant border border-outline-variant hover:bg-surface-container-low hover:text-on-surface" data-filter="iot">
-              IoT &amp; Sistem
-            </button>
-            <button class="filter-btn px-4 py-2 rounded-lg font-label-md text-label-md font-medium transition-all bg-surface-container-lowest text-on-surface-variant border border-outline-variant hover:bg-surface-container-low hover:text-on-surface" data-filter="uiux">
-              UI/UX
-            </button>
+        <!-- Main Hero Headline -->
+        <h1 class="hero-title">
+          Ideas become projects.<br />
+          <span class="text-primary">Projects create impact.</span>
+        </h1>
+
+        <!-- Hero Subtitle -->
+        <p class="hero-subtitle">
+          Ruang etalase digital untuk merayakan inovasi, proyek rekayasa perangkat lunak, riset kecerdasan buatan, dan kreativitas mahasiswa Informatika Universitas Jenderal Soedirman angkatan 2026.
+        </p>
+
+        <!-- Action Button Row -->
+        <div class="hero-actions">
+          <a class="btn-primary-action" href="#karya-terbaru">
+            <span>Jelajahi Portofolio</span>
+            <span class="material-symbols-outlined" style="font-size: 18px;">arrow_forward</span>
+          </a>
+          <a class="btn-secondary-action" href="#kenapa-penting">
+            Pelajari Lebih Lanjut
+          </a>
+        </div>
+
+        <!-- Minimalist Metric Strip (Validated Count of Works) -->
+        <div class="metric-strip">
+          <div class="metric-item">
+            <span id="metric-karya-count" class="metric-value text-primary">6</span>
+            <span class="metric-title">Proyek Aktif</span>
+            <span class="metric-desc">Tervalidasi &amp; Terverifikasi</span>
+          </div>
+          <div class="metric-item">
+            <span class="metric-value">120</span>
+            <span class="metric-title">Mahasiswa</span>
+            <span class="metric-desc">Kohor 2026 Purwokerto</span>
+          </div>
+          <div class="metric-item">
+            <span class="metric-value text-primary">4</span>
+            <span class="metric-title">Peminatan Teknis</span>
+            <span class="metric-desc">SE, AI/Data, Cyber, UI/UX</span>
           </div>
         </div>
 
-        <!-- Projects Responsive Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter mb-space-2xl" id="projects-grid">
+      </section>
+    </div>
+
+    
+    <section class="section-why" id="kenapa-penting">
+      <div class="container">
+        
+        <!-- Section Header -->
+        <div class="section-header-center">
+          <span class="pill-badge">
+            Nilai &amp; Visi
+          </span>
+          <h2 class="section-title">
+            Kenapa Portofolio Penting?
+          </h2>
+          <p class="section-desc">
+            Membangun jejak rekayasa dan membuka peluang industri sejak bangku kuliah.
+          </p>
+        </div>
+
+        <!-- 3 Benefit Cards -->
+        <div class="benefit-grid">
           
-          <!-- Project Card 1: Simasda -->
-          <div class="project-card group bg-surface-container-lowest rounded-xl border border-outline-variant p-space-md shadow-sm hover:shadow-md hover:border-primary/50 hover:-translate-y-1 transition-all flex flex-col justify-between" data-category="web-mobile">
+          <!-- Benefit Card 1 -->
+          <div class="benefit-card">
             <div>
-              <div class="relative w-full aspect-video rounded-lg overflow-hidden bg-surface-container-high mb-space-md">
-                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Modern web interface dashboard for smart university campus navigation" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3VZ_mX--7cmm92ZMCn8tILrIVa3Iwzw2kshmQEnPnXs7VVfNBk6k7zgQ0ajM-fgLhglPuvTDTSLAJMcEpqDpBZWZoYXrz2s3zw69k_X8kjfRxk-QW6-_Y4kdePonIF8ZBDLXqxC_XRn8S_QhB4j0LCZMEYfY2HtgnIGN5BCEJYzdGyQEqjqAB0z2wLJQZv-6cmOJBGUXUtQNje3yDZ0h1rEddDYdXhxFqmNyN1hqR" />
-                <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-sm text-primary font-label-sm text-label-sm font-semibold border border-outline-variant">
-                  Web Application
-                </span>
+              <div class="benefit-icon-wrapper bg-primary-light">
+                <span class="material-symbols-outlined" style="font-size: 24px;">terminal</span>
               </div>
-              <h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold group-hover:text-primary transition-colors line-clamp-1">
-                Simasda - Smart Campus Navigation
+              <h3 class="benefit-title">
+                Validasi Kompetensi Praktis
               </h3>
-              <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs line-clamp-2">
-                Peta interaktif kampus UNSOED Purwokerto dengan perutean cerdas antar fakultas, jadwal ruang kuliah real-time, dan estimasi waktu tempuh.
+              <p class="benefit-desc">
+                Membuktikan penguasaan algoritma, arsitektur sistem, dan teknologi modern melalui hasil karya nyata yang dapat diakses publik dan recruiter.
               </p>
-              <div class="flex flex-wrap gap-1.5 mt-space-md">
-                <span class="px-2.5 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Next.js</span>
-                <span class="px-2.5 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">PostgreSQL</span>
-                <span class="px-2.5 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Leaflet</span>
-              </div>
             </div>
-            <div class="pt-space-md mt-space-md border-t border-outline-variant flex items-center justify-between">
-              <div class="flex items-center gap-space-xs">
-                <div class="w-7 h-7 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center font-label-sm text-label-sm font-bold">
-                  RP
-                </div>
-                <span class="font-body-sm text-body-sm text-on-surface font-medium truncate max-w-[130px]">
-                  Rian Pratama &amp; Tim
-                </span>
-              </div>
-              <a class="inline-flex items-center gap-1 font-label-sm text-label-sm font-semibold text-primary hover:underline" href="#">
-                Detail <span class="material-symbols-outlined text-sm">arrow_forward</span>
-              </a>
+            <div class="benefit-footer text-primary">
+              <span>Standar rekayasa industri</span>
+              <span class="material-symbols-outlined" style="font-size: 16px;">check_circle</span>
             </div>
           </div>
 
-          <!-- Project Card 2: AgriVision UNSOED -->
-          <div class="project-card group bg-surface-container-lowest rounded-xl border border-outline-variant p-space-md shadow-sm hover:shadow-md hover:border-primary/50 hover:-translate-y-1 transition-all flex flex-col justify-between" data-category="ml">
+          <!-- Benefit Card 2 -->
+          <div class="benefit-card">
             <div>
-              <div class="relative w-full aspect-video rounded-lg overflow-hidden bg-surface-container-high mb-space-md">
-                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Machine learning computer vision model interface detecting rice leaf blast disease" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCp9F3DuQYVqBVRKbBZYcCT1vKiQvTcQWK63P9UFANvcnMnIsHXUtj-5BhtUcHsh3Hj4yLuHOeBom6cZqhhDvrjirnY_tAc9e-DfyUiP6LgnWrIBAV4zyafnY3mHkasVi8BaBfGD86PcqP_NexDiJTdhJog669yNMWEP6qP83N5mAzdK_HO0E5TWFNw1uWY3iHhCKu18uuWx5OtOOg-EZgGuP8byqLQ2ltSgAiT14wA" />
-                <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-sm text-secondary font-label-sm text-label-sm font-semibold border border-outline-variant">
-                  Machine Learning
-                </span>
+              <div class="benefit-icon-wrapper bg-secondary-light">
+                <span class="material-symbols-outlined" style="font-size: 24px;">hub</span>
               </div>
-              <h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold group-hover:text-primary transition-colors line-clamp-1">
-                AgriVision UNSOED - Deteksi Penyakit Padi
+              <h3 class="benefit-title">
+                Kolaborasi Lintas Disiplin
               </h3>
-              <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs line-clamp-2">
-                Model klasifikasi citra daun tanaman padi di lahan Banyumas dengan akurasi 96.4% untuk diagnosis penyakit blast dan hawar pelepah.
+              <p class="benefit-desc">
+                Memfasilitasi pertukaran ide, pembentukan tim riset kompetisi, dan proyek open-source antar mahasiswa Informatika angkatan 2026.
               </p>
-              <div class="flex flex-wrap gap-1.5 mt-space-md">
-                <span class="px-2.5 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">PyTorch</span>
-                <span class="px-2.5 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">FastAPI</span>
-                <span class="px-2.5 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">ResNet50</span>
-              </div>
             </div>
-            <div class="pt-space-md mt-space-md border-t border-outline-variant flex items-center justify-between">
-              <div class="flex items-center gap-space-xs">
-                <div class="w-7 h-7 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center font-label-sm text-label-sm font-bold">
-                  NR
-                </div>
-                <span class="font-body-sm text-body-sm text-on-surface font-medium truncate max-w-[130px]">
-                  Nadia Rahmawati
-                </span>
-              </div>
-              <a class="inline-flex items-center gap-1 font-label-sm text-label-sm font-semibold text-primary hover:underline" href="#">
-                Detail <span class="material-symbols-outlined text-sm">arrow_forward</span>
-              </a>
+            <div class="benefit-footer text-secondary">
+              <span>Sinergi antar-mahasiswa</span>
+              <span class="material-symbols-outlined" style="font-size: 16px;">group</span>
             </div>
           </div>
 
-          <!-- Project Card 3: Serayu IoT -->
-          <div class="project-card group bg-surface-container-lowest rounded-xl border border-outline-variant p-space-md shadow-sm hover:shadow-md hover:border-primary/50 hover:-translate-y-1 transition-all flex flex-col justify-between" data-category="iot">
+          <!-- Benefit Card 3 -->
+          <div class="benefit-card">
             <div>
-              <div class="relative w-full aspect-video rounded-lg overflow-hidden bg-surface-container-high mb-space-md">
-                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Internet of Things hardware prototype with microcontrollers monitoring Serayu river" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACIkcDwkUJy-B_fmdFB2rIQzsYBZuvsLuiNbmkPNnJp6MJWRYZBI-qFhgHkD0eCjLmpIOZtzzCFUZAaGSrV96KMVNNkjaacsNCLgayd7LRvG_JPJh2fejkyD7D-RvfnRNUsZk1wrg8tYP9pApKP9kA6lv12U8e0g09s-OShSSsn4Lybet0Vq4LALuZUskqe0R38oeGroiMrOXmkEu5YM7ex3JZm-c1hw-r6j6HpuzA" />
-                <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-sm text-primary font-label-sm text-label-sm font-semibold border border-outline-variant">
-                  IoT &amp; Hardware
-                </span>
+              <div class="benefit-icon-wrapper bg-high-light">
+                <span class="material-symbols-outlined" style="font-size: 24px;">rocket_launch</span>
               </div>
-              <h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold group-hover:text-primary transition-colors line-clamp-1">
-                Serayu IoT - Monitoring Kualitas Air Sungai
+              <h3 class="benefit-title">
+                Jembatan Karier &amp; Industri
               </h3>
-              <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs line-clamp-2">
-                Sensor node nirkabel terapung untuk mengukur kekeruhan (NTU), pH, dan suhu aliran Sungai Serayu secara periodik via protokol MQTT.
+              <p class="benefit-desc">
+                Katalog siap-akses bagi mitra industri, alumni, dan institusi untuk menemukan talenta muda berbakat dari kampus UNSOED Purwokerto.
               </p>
-              <div class="flex flex-wrap gap-1.5 mt-space-md">
-                <span class="px-2.5 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">ESP32</span>
-                <span class="px-2.5 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">MQTT</span>
-                <span class="px-2.5 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">InfluxDB</span>
-              </div>
             </div>
-            <div class="pt-space-md mt-space-md border-t border-outline-variant flex items-center justify-between">
-              <div class="flex items-center gap-space-xs">
-                <div class="w-7 h-7 rounded-full bg-primary-fixed-dim text-on-primary-fixed flex items-center justify-center font-label-sm text-label-sm font-bold">
-                  BA
-                </div>
-                <span class="font-body-sm text-body-sm text-on-surface font-medium truncate max-w-[130px]">
-                  Bima Arya Putra
-                </span>
-              </div>
-              <a class="inline-flex items-center gap-1 font-label-sm text-label-sm font-semibold text-primary hover:underline" href="#">
-                Detail <span class="material-symbols-outlined text-sm">arrow_forward</span>
-              </a>
-            </div>
-          </div>
-
-          <!-- Project Card 4: Banyumas Tour Guide AR -->
-          <div class="project-card group bg-surface-container-lowest rounded-xl border border-outline-variant p-space-md shadow-sm hover:shadow-md hover:border-primary/50 hover:-translate-y-1 transition-all flex flex-col justify-between" data-category="web-mobile">
-            <div>
-              <div class="relative w-full aspect-video rounded-lg overflow-hidden bg-surface-container-high mb-space-md">
-                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Augmented reality smartphone application camera viewport displaying 3D historic landmarks" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABQdOgSJ2NdcvN6D7muX-lbGBMyzxySfR8-yGicqgjDcgyiE3NzTcfMpvD_uuIvNWw63tczInIQ5Vic0f4tEOGAsUQkkiga-nODduerxCNhbeuA9IGIEXAvTR-TtGdNSkn3NRGsZcMYE6r__Mt6Mp005_Owg1KEoS8gqLFlF_yJrMGB1N1k22kNlY2QmKn6Ei1IDTNNuVys_E3o_JoD6eg5qS8PrfJ7dCKmJzxsvYP" />
-                <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-sm text-primary font-label-sm text-label-sm font-semibold border border-outline-variant">
-                  Mobile App
-                </span>
-              </div>
-              <h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold group-hover:text-primary transition-colors line-clamp-1">
-                Banyumas Tour Guide AR
-              </h3>
-              <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs line-clamp-2">
-                Aplikasi mobile edukasi wisata interaktif berbasis Augmented Reality yang menampilkan artefak 3D di Baturraden dan Museum Wayang.
-              </p>
-              <div class="flex flex-wrap gap-1.5 mt-space-md">
-                <span class="px-2.5 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Flutter</span>
-                <span class="px-2.5 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">ARCore</span>
-                <span class="px-2.5 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Blender</span>
-              </div>
-            </div>
-            <div class="pt-space-md mt-space-md border-t border-outline-variant flex items-center justify-between">
-              <div class="flex items-center gap-space-xs">
-                <div class="w-7 h-7 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center font-label-sm text-label-sm font-bold">
-                  FM
-                </div>
-                <span class="font-body-sm text-body-sm text-on-surface font-medium truncate max-w-[130px]">
-                  Farhan Maulana
-                </span>
-              </div>
-              <a class="inline-flex items-center gap-1 font-label-sm text-label-sm font-semibold text-primary hover:underline" href="#">
-                Detail <span class="material-symbols-outlined text-sm">arrow_forward</span>
-              </a>
-            </div>
-          </div>
-
-          <!-- Project Card 5: Klinik Kampus Telemedicine UI Kit -->
-          <div class="project-card group bg-surface-container-lowest rounded-xl border border-outline-variant p-space-md shadow-sm hover:shadow-md hover:border-primary/50 hover:-translate-y-1 transition-all flex flex-col justify-between" data-category="uiux">
-            <div>
-              <div class="relative w-full aspect-video rounded-lg overflow-hidden bg-surface-container-high mb-space-md">
-                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Figma UI UX telemedicine design system showpiece featuring doctor appointment calendars" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZVRJWfnNsgoFF7_OlSf90Ys025xM07bpDbHbn7Q-Q-WVo4WeHPcZPmWde5KjX082p9Wmy18Xq3f-4dMcxj2A9lqWArwLXAodVYF5wcjj41WXSBPTf1OBWr3W_UkXL88FAUws27xVquCWhY1rRTTXB2cyr9ne1XJe1239PdtD411rDOVLrnLKgR_ZqI46Zw_AToPpfXVPAzfsSUPmIN50gSrh-dAfcUO--WYoXsIQs" />
-                <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-sm text-secondary font-label-sm text-label-sm font-semibold border border-outline-variant">
-                  UI/UX Design
-                </span>
-              </div>
-              <h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold group-hover:text-primary transition-colors line-clamp-1">
-                Klinik Kampus Telemedicine UI Kit
-              </h3>
-              <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs line-clamp-2">
-                Desain sistem antarmuka holistik untuk layanan konsultasi kesehatan mental &amp; rekam medis klinik pratama universitas.
-              </p>
-              <div class="flex flex-wrap gap-1.5 mt-space-md">
-                <span class="px-2.5 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Figma</span>
-                <span class="px-2.5 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Design System</span>
-                <span class="px-2.5 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">WCAG AAA</span>
-              </div>
-            </div>
-            <div class="pt-space-md mt-space-md border-t border-outline-variant flex items-center justify-between">
-              <div class="flex items-center gap-space-xs">
-                <div class="w-7 h-7 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center font-label-sm text-label-sm font-bold">
-                  AS
-                </div>
-                <span class="font-body-sm text-body-sm text-on-surface font-medium truncate max-w-[130px]">
-                  Aulia Safitri
-                </span>
-              </div>
-              <a class="inline-flex items-center gap-1 font-label-sm text-label-sm font-semibold text-primary hover:underline" href="#">
-                Detail <span class="material-symbols-outlined text-sm">arrow_forward</span>
-              </a>
-            </div>
-          </div>
-
-          <!-- Project Card 6: Lencana -->
-          <div class="project-card group bg-surface-container-lowest rounded-xl border border-outline-variant p-space-md shadow-sm hover:shadow-md hover:border-primary/50 hover:-translate-y-1 transition-all flex flex-col justify-between" data-category="iot">
-            <div>
-              <div class="relative w-full aspect-video rounded-lg overflow-hidden bg-surface-container-high mb-space-md">
-                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Cryptographic decentralized smart contract dashboard showcasing academic diploma verification" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUXCZQ8BtahXW6h0aYvbPrYd11RBkaqvYRbE9S1FwdfgwHWHBLI_CJ7BE9tIkZTf9car1Cx3nNIY12CrZsSVXnidmuj5WXSYAFGdRKwPVcRYRNLvs9w2UURZBRnsvRiZtO0zxBeJYFNGx16pIM4A3EleigrsbbSUQCoTedgJ0K7_7r1EmY3-mMtHK2G0AN6WqEnyr7eqM1x5bis7UplgTqEdRjdyby6l0FmTPpX_Cv" />
-                <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-sm text-primary font-label-sm text-label-sm font-semibold border border-outline-variant">
-                  Blockchain &amp; Security
-                </span>
-              </div>
-              <h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold group-hover:text-primary transition-colors line-clamp-1">
-                Lencana - Decentralized Academic Credential
-              </h3>
-              <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs line-clamp-2">
-                Protokol verifikasi ijazah digital dan sertifikat asisten laboratorium anti-pemalsuan menggunakan immutable smart contract.
-              </p>
-              <div class="flex flex-wrap gap-1.5 mt-space-md">
-                <span class="px-2.5 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Solidity</span>
-                <span class="px-2.5 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Tailwind</span>
-                <span class="px-2.5 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Ethers.js</span>
-              </div>
-            </div>
-            <div class="pt-space-md mt-space-md border-t border-outline-variant flex items-center justify-between">
-              <div class="flex items-center gap-space-xs">
-                <div class="w-7 h-7 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center font-label-sm text-label-sm font-bold">
-                  DW
-                </div>
-                <span class="font-body-sm text-body-sm text-on-surface font-medium truncate max-w-[130px]">
-                  Dimas Wicaksono
-                </span>
-              </div>
-              <a class="inline-flex items-center gap-1 font-label-sm text-label-sm font-semibold text-primary hover:underline" href="#">
-                Detail <span class="material-symbols-outlined text-sm">arrow_forward</span>
-              </a>
+            <div class="benefit-footer text-primary">
+              <span>Akses mitra &amp; alumni UNSOED</span>
+              <span class="material-symbols-outlined" style="font-size: 16px;">verified</span>
             </div>
           </div>
 
         </div>
 
-        <!-- Bottom Catalog CTA -->
-        <div class="flex justify-center">
-          <button class="inline-flex items-center gap-space-sm h-11 px-6 rounded-lg bg-surface-container-lowest text-on-surface font-label-md text-label-md font-medium border border-outline-variant shadow-sm hover:bg-surface-container-low hover:border-outline transition-all">
-            <span>Lihat Semua Karya (<span id="btn-karya-count">6</span>)</span>
-            <span class="material-symbols-outlined text-base">expand_more</span>
+      </div>
+    </section>
+
+    <!-- 3. SECTION: KARYA TERBARU (RECENT PROJECTS) -->
+    <section class="container section-catalog" id="karya-terbaru">
+      
+      <!-- Section Title & Filter Tabs -->
+      <div class="catalog-header">
+        <div>
+          <div class="section-label">
+            <span class="section-label-dot"></span>
+            Katalog Terkini
+          </div>
+          <h2 class="section-title">
+            Karya Terbaru
+          </h2>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="filter-group" id="filter-container">
+          <button class="filter-btn active-tab" data-filter="all">
+            Semua
+          </button>
+          <button class="filter-btn" data-filter="web-mobile">
+            Web &amp; Mobile
+          </button>
+          <button class="filter-btn" data-filter="ml">
+            Machine Learning
+          </button>
+          <button class="filter-btn" data-filter="iot">
+            IoT &amp; Sistem
+          </button>
+          <button class="filter-btn" data-filter="uiux">
+            UI/UX
           </button>
         </div>
+      </div>
 
-      </section>
-
-      <!-- 4. CALLOUT / BANNER -->
-      <section class="w-full max-w-7xl mx-auto px-margin pb-space-3xl">
-        <div class="relative overflow-hidden rounded-2xl bg-gradient-to-r from-surface-container-high via-surface-container to-surface-container-high border border-outline-variant p-space-xl sm:p-space-2xl shadow-sm">
-          <div class="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-space-lg">
-            <div class="max-w-2xl">
-              <div class="inline-flex items-center gap-2 text-primary font-label-sm text-label-sm font-semibold uppercase tracking-wider mb-space-xs">
-                <span class="material-symbols-outlined text-base">school</span>
-                Portal Kontribusi Angkatan
-              </div>
-              <h3 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">
-                Mahasiswa Informatika 2026?
-              </h3>
-              <p class="font-body-md text-body-md text-on-surface-variant mt-space-xs">
-                Publikasikan karya tugas besar, proyek mandiri, atau riset kompetisimu di platform Ilio agar terindeks di portofolio resmi kohor.
-              </p>
+      <!-- Projects Responsive Grid -->
+      <div class="projects-grid" id="projects-grid">
+        
+        <!-- Project Card 1: Simasda -->
+        <div class="project-card" data-category="web-mobile">
+          <div>
+            <div class="project-thumbnail-wrapper">
+              <img class="project-thumbnail" data-alt="Modern web interface dashboard for smart university campus navigation" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3VZ_mX--7cmm92ZMCn8tILrIVa3Iwzw2kshmQEnPnXs7VVfNBk6k7zgQ0ajM-fgLhglPuvTDTSLAJMcEpqDpBZWZoYXrz2s3zw69k_X8kjfRxk-QW6-_Y4kdePonIF8ZBDLXqxC_XRn8S_QhB4j0LCZMEYfY2HtgnIGN5BCEJYzdGyQEqjqAB0z2wLJQZv-6cmOJBGUXUtQNje3yDZ0h1rEddDYdXhxFqmNyN1hqR" />
+              <span class="project-badge-category cat-primary">
+                Web Application
+              </span>
             </div>
-            <div class="flex items-center gap-space-md shrink-0">
-              <a class="open-submit-modal inline-flex items-center justify-center gap-space-sm h-12 px-6 rounded-lg bg-secondary-container text-on-secondary-fixed font-label-md text-label-md font-semibold shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all cursor-pointer" data-path="submit-karya" href="javascript:void(0)">
-                <span class="material-symbols-outlined text-lg">upload_file</span>
-                <span>Submit Karya</span>
-              </a>
+            <h3 class="project-title">
+              Simasda - Smart Campus Navigation
+            </h3>
+            <p class="project-desc">
+              Peta interaktif kampus UNSOED Purwokerto dengan perutean cerdas antar fakultas, jadwal ruang kuliah real-time, dan estimasi waktu tempuh.
+            </p>
+            <div class="tech-stack-row">
+              <span class="tech-chip">Next.js</span>
+              <span class="tech-chip">PostgreSQL</span>
+              <span class="tech-chip">Leaflet</span>
             </div>
           </div>
-          <!-- Subtle Decorative Geometry Watermark -->
-          <div class="absolute -right-10 -bottom-10 opacity-5 pointer-events-none text-primary">
-            <span class="material-symbols-outlined text-[180px]">deployed_code</span>
+          <div class="project-author-strip">
+            <div class="author-info">
+              <div class="author-avatar bg-primary-avatar">
+                RP
+              </div>
+              <span class="author-name">
+                Rian Pratama &amp; Tim
+              </span>
+            </div>
+            <a class="link-detail" href="#">
+              Detail <span class="material-symbols-outlined" style="font-size: 14px;">arrow_forward</span>
+            </a>
           </div>
         </div>
-      </section>
 
-    </div>
+        <!-- Project Card 2: AgriVision UNSOED -->
+        <div class="project-card" data-category="ml">
+          <div>
+            <div class="project-thumbnail-wrapper">
+              <img class="project-thumbnail" data-alt="Machine learning computer vision model interface detecting rice leaf blast disease" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCp9F3DuQYVqBVRKbBZYcCT1vKiQvTcQWK63P9UFANvcnMnIsHXUtj-5BhtUcHsh3Hj4yLuHOeBom6cZqhhDvrjirnY_tAc9e-DfyUiP6LgnWrIBAV4zyafnY3mHkasVi8BaBfGD86PcqP_NexDiJTdhJog669yNMWEP6qP83N5mAzdK_HO0E5TWFNw1uWY3iHhCKu18uuWx5OtOOg-EZgGuP8byqLQ2ltSgAiT14wA" />
+              <span class="project-badge-category cat-secondary">
+                Machine Learning
+              </span>
+            </div>
+            <h3 class="project-title">
+              AgriVision UNSOED - Deteksi Penyakit Padi
+            </h3>
+            <p class="project-desc">
+              Model klasifikasi citra daun tanaman padi di lahan Banyumas dengan akurasi 96.4% untuk diagnosis penyakit blast dan hawar pelepah.
+            </p>
+            <div class="tech-stack-row">
+              <span class="tech-chip">PyTorch</span>
+              <span class="tech-chip">FastAPI</span>
+              <span class="tech-chip">ResNet50</span>
+            </div>
+          </div>
+          <div class="project-author-strip">
+            <div class="author-info">
+              <div class="author-avatar bg-secondary-avatar">
+                NR
+              </div>
+              <span class="author-name">
+                Nadia Rahmawati
+              </span>
+            </div>
+            <a class="link-detail" href="#">
+              Detail <span class="material-symbols-outlined" style="font-size: 14px;">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project Card 3: Serayu IoT -->
+        <div class="project-card" data-category="iot">
+          <div>
+            <div class="project-thumbnail-wrapper">
+              <img class="project-thumbnail" data-alt="Internet of Things hardware prototype with microcontrollers monitoring Serayu river" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACIkcDwkUJy-B_fmdFB2rIQzsYBZuvsLuiNbmkPNnJp6MJWRYZBI-qFhgHkD0eCjLmpIOZtzzCFUZAaGSrV96KMVNNkjaacsNCLgayd7LRvG_JPJh2fejkyD7D-RvfnRNUsZk1wrg8tYP9pApKP9kA6lv12U8e0g09s-OShSSsn4Lybet0Vq4LALuZUskqe0R38oeGroiMrOXmkEu5YM7ex3JZm-c1hw-r6j6HpuzA" />
+              <span class="project-badge-category cat-primary">
+                IoT &amp; Hardware
+              </span>
+            </div>
+            <h3 class="project-title">
+              Serayu IoT - Monitoring Kualitas Air Sungai
+            </h3>
+            <p class="project-desc">
+              Sensor node nirkabel terapung untuk mengukur kekeruhan (NTU), pH, dan suhu aliran Sungai Serayu secara periodik via protokol MQTT.
+            </p>
+            <div class="tech-stack-row">
+              <span class="tech-chip">ESP32</span>
+              <span class="tech-chip">MQTT</span>
+              <span class="tech-chip">InfluxDB</span>
+            </div>
+          </div>
+          <div class="project-author-strip">
+            <div class="author-info">
+              <div class="author-avatar bg-dim-avatar">
+                BA
+              </div>
+              <span class="author-name">
+                Bima Arya Putra
+              </span>
+            </div>
+            <a class="link-detail" href="#">
+              Detail <span class="material-symbols-outlined" style="font-size: 14px;">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project Card 4: Banyumas Tour Guide AR -->
+        <div class="project-card" data-category="web-mobile">
+          <div>
+            <div class="project-thumbnail-wrapper">
+              <img class="project-thumbnail" data-alt="Augmented reality smartphone application camera viewport displaying 3D historic landmarks" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABQdOgSJ2NdcvN6D7muX-lbGBMyzxySfR8-yGicqgjDcgyiE3NzTcfMpvD_uuIvNWw63tczInIQ5Vic0f4tEOGAsUQkkiga-nODduerxCNhbeuA9IGIEXAvTR-TtGdNSkn3NRGsZcMYE6r__Mt6Mp005_Owg1KEoS8gqLFlF_yJrMGB1N1k22kNlY2QmKn6Ei1IDTNNuVys_E3o_JoD6eg5qS8PrfJ7dCKmJzxsvYP" />
+              <span class="project-badge-category cat-primary">
+                Mobile App
+              </span>
+            </div>
+            <h3 class="project-title">
+              Banyumas Tour Guide AR
+            </h3>
+            <p class="project-desc">
+              Aplikasi mobile edukasi wisata interaktif berbasis Augmented Reality yang menampilkan artefak 3D di Baturraden dan Museum Wayang.
+            </p>
+            <div class="tech-stack-row">
+              <span class="tech-chip">Flutter</span>
+              <span class="tech-chip">ARCore</span>
+              <span class="tech-chip">Blender</span>
+            </div>
+          </div>
+          <div class="project-author-strip">
+            <div class="author-info">
+              <div class="author-avatar bg-high-avatar">
+                FM
+              </div>
+              <span class="author-name">
+                Farhan Maulana
+              </span>
+            </div>
+            <a class="link-detail" href="#">
+              Detail <span class="material-symbols-outlined" style="font-size: 14px;">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project Card 5: Klinik Kampus Telemedicine UI Kit -->
+        <div class="project-card" data-category="uiux">
+          <div>
+            <div class="project-thumbnail-wrapper">
+              <img class="project-thumbnail" data-alt="Figma UI UX telemedicine design system showpiece featuring doctor appointment calendars" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZVRJWfnNsgoFF7_OlSf90Ys025xM07bpDbHbn7Q-Q-WVo4WeHPcZPmWde5KjX082p9Wmy18Xq3f-4dMcxj2A9lqWArwLXAodVYF5wcjj41WXSBPTf1OBWr3W_UkXL88FAUws27xVquCWhY1rRTTXB2cyr9ne1XJe1239PdtD411rDOVLrnLKgR_ZqI46Zw_AToPpfXVPAzfsSUPmIN50gSrh-dAfcUO--WYoXsIQs" />
+              <span class="project-badge-category cat-secondary">
+                UI/UX Design
+              </span>
+            </div>
+            <h3 class="project-title">
+              Klinik Kampus Telemedicine UI Kit
+            </h3>
+            <p class="project-desc">
+              Desain sistem antarmuka holistik untuk layanan konsultasi kesehatan mental &amp; rekam medis klinik pratama universitas.
+            </p>
+            <div class="tech-stack-row">
+              <span class="tech-chip">Figma</span>
+              <span class="tech-chip">Design System</span>
+              <span class="tech-chip">WCAG AAA</span>
+            </div>
+          </div>
+          <div class="project-author-strip">
+            <div class="author-info">
+              <div class="author-avatar bg-secondary-avatar">
+                AS
+              </div>
+              <span class="author-name">
+                Aulia Safitri
+              </span>
+            </div>
+            <a class="link-detail" href="#">
+              Detail <span class="material-symbols-outlined" style="font-size: 14px;">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project Card 6: Lencana -->
+        <div class="project-card" data-category="iot">
+          <div>
+            <div class="project-thumbnail-wrapper">
+              <img class="project-thumbnail" data-alt="Cryptographic decentralized smart contract dashboard showcasing academic diploma verification" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUXCZQ8BtahXW6h0aYvbPrYd11RBkaqvYRbE9S1FwdfgwHWHBLI_CJ7BE9tIkZTf9car1Cx3nNIY12CrZsSVXnidmuj5WXSYAFGdRKwPVcRYRNLvs9w2UURZBRnsvRiZtO0zxBeJYFNGx16pIM4A3EleigrsbbSUQCoTedgJ0K7_7r1EmY3-mMtHK2G0AN6WqEnyr7eqM1x5bis7UplgTqEdRjdyby6l0FmTPpX_Cv" />
+              <span class="project-badge-category cat-primary">
+                Blockchain &amp; Security
+              </span>
+            </div>
+            <h3 class="project-title">
+              Lencana - Decentralized Academic Credential
+            </h3>
+            <p class="project-desc">
+              Protokol verifikasi ijazah digital dan sertifikat asisten laboratorium anti-pemalsuan menggunakan immutable smart contract.
+            </p>
+            <div class="tech-stack-row">
+              <span class="tech-chip">Solidity</span>
+              <span class="tech-chip">Tailwind</span>
+              <span class="tech-chip">Ethers.js</span>
+            </div>
+          </div>
+          <div class="project-author-strip">
+            <div class="author-info">
+              <div class="author-avatar bg-primary-avatar">
+                DW
+              </div>
+              <span class="author-name">
+                Dimas Wicaksono
+              </span>
+            </div>
+            <a class="link-detail" href="#">
+              Detail <span class="material-symbols-outlined" style="font-size: 14px;">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom Catalog CTA -->
+      <div class="catalog-cta-center">
+        <button class="btn-show-all">
+          <span>Lihat Semua Karya (<span id="btn-karya-count">6</span>)</span>
+          <span class="material-symbols-outlined" style="font-size: 18px;">expand_more</span>
+        </button>
+      </div>
+
+    </section>
+
+    <!-- 4. CALLOUT / BANNER -->
+    <section class="container section-banner">
+      <div class="banner-card">
+        <div class="banner-content-row">
+          <div class="banner-text-wrapper">
+            <div class="banner-portal-tag">
+              <span class="material-symbols-outlined" style="font-size: 18px;">school</span>
+              Portal Kontribusi Angkatan
+            </div>
+            <h3 class="banner-title">
+              Mahasiswa Informatika 2026?
+            </h3>
+            <p class="banner-desc">
+              Publikasikan karya tugas besar, proyek mandiri, atau riset kompetisimu di platform Ilio agar terindeks di portofolio resmi kohor.
+            </p>
+          </div>
+          <div>
+            <a class="open-submit-modal btn-primary-action" data-path="submit-karya" href="javascript:void(0)">
+              <span class="material-symbols-outlined" style="font-size: 18px;">upload_file</span>
+              <span>Submit Karya</span>
+            </a>
+          </div>
+        </div>
+        <!-- Subtle Decorative Geometry Watermark -->
+        <div class="banner-watermark">
+          <span class="material-symbols-outlined">deployed_code</span>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <!-- ========================================================
        MODAL FORM: SUBMIT KARYA DENGAN VALIDASI ANGKA JUMLAH
        ======================================================== -->
-  <div id="modal-submit-karya" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4">
+  <div id="modal-submit-karya" class="modal-wrapper hidden">
     <!-- Backdrop Overlay -->
-    <div id="modal-backdrop" class="modal-backdrop fixed inset-0"></div>
+    <div id="modal-backdrop" class="modal-backdrop"></div>
 
     <!-- Modal Card Content -->
-    <div class="modal-content relative z-10 w-full max-w-lg bg-surface-container-lowest rounded-2xl border border-outline-variant shadow-2xl p-6 sm:p-8 max-h-[90vh] overflow-y-auto">
+    <div class="modal-content">
       
       <!-- Modal Header -->
-      <div class="flex items-start justify-between pb-4 border-b border-outline-variant mb-6">
+      <div class="modal-header">
         <div>
-          <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">
+          <h3 class="modal-title">
             Submit Karya Baru
           </h3>
-          <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+          <p class="modal-subtitle">
             Daftarkan karya atau proyek portofolio mahasiswa Informatika 2026.
           </p>
         </div>
-        <button id="btn-close-modal" class="text-on-surface-variant hover:text-on-surface p-1 rounded-lg hover:bg-surface-container transition-colors">
-          <span class="material-symbols-outlined text-2xl">close</span>
+        <button id="btn-close-modal" class="btn-close-modal" title="Tutup">
+          <span class="material-symbols-outlined" style="font-size: 24px;">close</span>
         </button>
       </div>
 
       <!-- Submission Form -->
-      <form id="form-submit-karya" novalidate class="flex flex-col gap-4">
+      <form id="form-submit-karya" novalidate class="submit-form">
         
         <!-- Input: Judul Karya -->
-        <div>
-          <label for="input-judul" class="block font-label-md text-label-md text-on-surface font-medium mb-1">
+        <div class="form-group">
+          <label for="input-judul" class="form-label">
             Judul Proyek / Karya <span class="text-error">*</span>
           </label>
           <input 
             type="text" 
             id="input-judul" 
-            class="input-field w-full px-3.5 py-2.5 rounded-lg border border-outline-variant bg-surface font-body-md text-body-md text-on-surface" 
+            class="input-field" 
             placeholder="Contoh: Sistem AI Klasifikasi Tanah" 
             required 
           />
-          <span id="err-judul" class="hidden text-error text-xs mt-1">Judul karya wajib diisi.</span>
+          <span id="err-judul" class="error-message hidden">Judul karya wajib diisi.</span>
         </div>
 
-        <!-- Dropdown: Kategori -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div>
-            <label for="input-kategori" class="block font-label-md text-label-md text-on-surface font-medium mb-1">
+        <!-- Dropdown: Kategori & VALIDASI ANGKA -->
+        <div class="form-row-2">
+          <div class="form-group">
+            <label for="input-kategori" class="form-label">
               Kategori <span class="text-error">*</span>
             </label>
             <select 
               id="input-kategori" 
-              class="input-field w-full px-3 py-2.5 rounded-lg border border-outline-variant bg-surface font-body-md text-body-md text-on-surface"
+              class="input-field"
             >
               <option value="web-mobile">Web &amp; Mobile</option>
               <option value="ml">Machine Learning</option>
@@ -677,8 +568,8 @@
           </div>
 
           <!-- Input: VALIDASI ANGKA JUMLAH KARYA / ANGGOTA -->
-          <div>
-            <label for="input-jumlah-karya" class="block font-label-md text-label-md text-on-surface font-medium mb-1">
+          <div class="form-group">
+            <label for="input-jumlah-karya" class="form-label">
               Jumlah Anggota / Modul <span class="text-error">*</span>
             </label>
             <input 
@@ -686,71 +577,93 @@
               id="input-jumlah-karya" 
               min="1" 
               step="1" 
-              class="input-field w-full px-3.5 py-2.5 rounded-lg border border-outline-variant bg-surface font-body-md text-body-md text-on-surface" 
+              class="input-field" 
               placeholder="Angka (min: 1)" 
               required 
             />
-            <span id="err-jumlah-karya" class="hidden text-error text-xs mt-1">Harap masukkan angka bulat positif (minimal 1).</span>
+            <span id="err-jumlah-karya" class="error-message hidden">Harap masukkan angka bulat positif (minimal 1).</span>
           </div>
         </div>
 
         <!-- Input: Nama Pembuat / Tim -->
-        <div>
-          <label for="input-author" class="block font-label-md text-label-md text-on-surface font-medium mb-1">
+        <div class="form-group">
+          <label for="input-author" class="form-label">
             Nama Pengembang / Tim <span class="text-error">*</span>
           </label>
           <input 
             type="text" 
             id="input-author" 
-            class="input-field w-full px-3.5 py-2.5 rounded-lg border border-outline-variant bg-surface font-body-md text-body-md text-on-surface" 
+            class="input-field" 
             placeholder="Contoh: Muhammad Rizky &amp; Tim" 
             required 
           />
-          <span id="err-author" class="hidden text-error text-xs mt-1">Nama pembuat wajib diisi.</span>
+          <span id="err-author" class="error-message hidden">Nama pembuat wajib diisi.</span>
         </div>
 
         <!-- Input: Deskripsi Singkat -->
-        <div>
-          <label for="input-deskripsi" class="block font-label-md text-label-md text-on-surface font-medium mb-1">
+        <div class="form-group">
+          <label for="input-deskripsi" class="form-label">
             Deskripsi Singkat Karya <span class="text-error">*</span>
           </label>
           <textarea 
             id="input-deskripsi" 
             rows="3" 
-            class="input-field w-full px-3.5 py-2.5 rounded-lg border border-outline-variant bg-surface font-body-md text-body-md text-on-surface resize-none" 
+            class="input-field" 
+            style="resize: none;" 
             placeholder="Jelaskan secara ringkas fitur dan keunggulan proyek..." 
             required
           ></textarea>
-          <span id="err-deskripsi" class="hidden text-error text-xs mt-1">Deskripsi karya wajib diisi.</span>
+          <span id="err-deskripsi" class="error-message hidden">Deskripsi karya wajib diisi.</span>
         </div>
 
         <!-- Input: Tech Stack (Pisahkan dengan koma) -->
-        <div>
-          <label for="input-tech" class="block font-label-md text-label-md text-on-surface font-medium mb-1">
+        <div class="form-group">
+          <label for="input-tech" class="form-label">
             Tech Stack (Pisahkan dengan koma)
           </label>
           <input 
             type="text" 
             id="input-tech" 
-            class="input-field w-full px-3.5 py-2.5 rounded-lg border border-outline-variant bg-surface font-body-md text-body-md text-on-surface" 
+            class="input-field" 
             placeholder="Contoh: React, FastAPI, Tailwind" 
           />
         </div>
 
+        <!-- Input: Upload Foto / Thumbnail Karya -->
+        <div class="form-group">
+          <label for="input-foto" class="form-label">
+            Foto / Thumbnail Karya
+          </label>
+          <div class="file-upload-wrapper">
+            <input 
+              type="file" 
+              id="input-foto" 
+              accept="image/*" 
+              class="input-field" 
+            />
+            <p class="file-hint">Mendukung format JPG, PNG, WebP. Foto akan otomatis disimpan ke folder <code>karya/uploads/</code>.</p>
+            <div id="foto-preview-wrapper" class="foto-preview-wrapper hidden">
+              <img id="foto-preview-img" src="" alt="Preview Foto" class="foto-preview-img" />
+              <button type="button" id="btn-remove-foto" class="btn-remove-foto" title="Hapus foto">&times;</button>
+            </div>
+          </div>
+        </div>
+
         <!-- Action Buttons -->
-        <div class="flex items-center justify-end gap-3 pt-4 border-t border-outline-variant mt-2">
+        <div class="form-actions">
           <button 
             type="button" 
             id="btn-cancel-modal" 
-            class="px-5 py-2.5 rounded-lg border border-outline-variant text-on-surface-variant hover:bg-surface-container font-label-md text-label-md font-medium transition-colors"
+            class="btn-cancel"
           >
             Batal
           </button>
           <button 
             type="submit" 
-            class="btn-submit-nav px-6 py-2.5 rounded-lg font-label-md text-label-md font-semibold shadow-sm transition-all flex items-center gap-2"
+            class="btn-submit-nav"
+            style="display: inline-flex; align-items: center; gap: 0.5rem;"
           >
-            <span class="material-symbols-outlined text-base">check_circle</span>
+            <span class="material-symbols-outlined" style="font-size: 16px;">check_circle</span>
             <span>Simpan Karya</span>
           </button>
         </div>
@@ -761,46 +674,46 @@
   </div>
 
   <!-- Toast Notification -->
-  <div id="toast-notif" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 hidden toast-notification px-5 py-3 rounded-xl bg-inverse-surface text-inverse-on-surface font-label-md text-label-md shadow-xl flex items-center gap-2">
-    <span class="material-symbols-outlined text-secondary-fixed text-lg">check_circle</span>
+  <div id="toast-notif" class="toast-notification hidden">
+    <span class="material-symbols-outlined">check_circle</span>
     <span id="toast-message">Karya berhasil dimasukkan dan jumlah karya diperbarui!</span>
   </div>
 
   <!-- ========================================================
        FOOTER
        ======================================================== -->
-  <footer class="w-full bg-surface-container-lowest border-t border-outline-variant mt-space-3xl">
-    <div class="max-w-7xl mx-auto px-margin py-space-2xl">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter mb-space-2xl">
-        <div class="md:col-span-2 flex flex-col gap-space-sm">
-          <div class="flex items-center gap-space-sm">
-            <span class="font-headline-md text-headline-md text-primary font-bold">Ilio</span>
-            <span class="px-space-sm py-space-xs rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="brand-wrapper" style="margin-bottom: 0.5rem;">
+            <span class="brand-logo">Ilio</span>
+            <span class="cohort-tag" style="background-color: var(--color-surface-container); color: var(--color-on-surface-variant);">
               UNSOED 2026
             </span>
           </div>
-          <p class="font-body-sm text-body-sm text-on-surface-variant max-w-md">
+          <p style="max-width: 400px;">
             Modern student portfolio and research showcase platform for Informatics undergraduate cohorts at Universitas Jenderal Soedirman.
           </p>
         </div>
-        <div class="flex flex-col gap-space-xs">
-          <span class="font-label-md text-label-md text-on-surface font-semibold mb-space-xs">Sekretariat</span>
-          <p class="font-body-sm text-body-sm text-on-surface-variant">Jurusan Informatika UNSOED</p>
-          <p class="font-body-sm text-body-sm text-on-surface-variant">Purwokerto, Jawa Tengah</p>
-          <p class="font-body-sm text-body-sm text-on-surface-variant">Indonesia</p>
+        <div class="footer-col">
+          <span class="footer-col-title">Sekretariat</span>
+          <p>Jurusan Informatika UNSOED</p>
+          <p>Purwokerto, Jawa Tengah</p>
+          <p>Indonesia</p>
         </div>
-        <div class="flex flex-col gap-space-xs">
-          <span class="font-label-md text-label-md text-on-surface font-semibold mb-space-xs">Kontak</span>
-          <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="mailto:informatics@unsoed.ac.id">
+        <div class="footer-col">
+          <span class="footer-col-title">Kontak</span>
+          <a href="mailto:informatics@unsoed.ac.id">
             informatics@unsoed.ac.id
           </a>
-          <span class="font-body-sm text-body-sm text-on-surface-variant">Fakultas Teknik</span>
+          <p>Fakultas Teknik</p>
         </div>
       </div>
-      <div class="pt-space-lg border-t border-outline-variant flex flex-col sm:flex-row items-center justify-between gap-space-md text-on-surface-variant font-body-sm text-body-sm">
+      <div class="footer-bottom">
         <p>&copy; 2026 Ilio Informatics Universitas Jenderal Soedirman. All rights reserved.</p>
-        <div class="flex items-center gap-space-lg">
-          <span class="font-label-sm text-label-sm text-on-surface-variant">Angkatan 2026</span>
+        <div>
+          <span>Angkatan 2026</span>
         </div>
       </div>
     </div>

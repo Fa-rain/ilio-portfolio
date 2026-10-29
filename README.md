@@ -1,10 +1,10 @@
-# 🚀 Ilio - Website Portofolio Informatika UNSOED
+﻿# ðŸš€ Ilio - Website Portofolio Informatika UNSOED
 
 **Ilio** adalah sebuah platform situs web yang dirancang khusus untuk menampilkan berbagai karya dan proyek terbaik dari Mahasiswa Jurusan Informatika Universitas Jenderal Soedirman (UNSOED). Platform ini dibangun sebagai wadah apresiasi sekaligus katalisator untuk memantik ide-ide kreatif dan inovatif lainnya.
 
 ---
 
-## 📌 Fitur Utama
+## ðŸ“Œ Fitur Utama
 
 - **Homepage**: Tampilan utama yang menarik dan informatif.
 - **Navigation Bar**: Navigasi yang responsif untuk mempermudah pemrosesan antar halaman.
@@ -13,7 +13,7 @@
 
 ---
 
-## 🛠️ Teknologi yang Digunakan
+## ðŸ› ï¸ Teknologi yang Digunakan
 
 - **Frontend**: HTML5, CSS3, Vanilla JavaScript (ES6+)
 - **Version Control**: Git & GitHub
@@ -22,26 +22,20 @@
 
 ## 💻 Cara Menjalankan di Lokal
 
-Untuk menjalankan proyek ini di lingkungan lokal (local server seperti XAMPP/Laragon/Live Server), ikuti langkah-langkah berikut:
+Karena proyek ini dibangun dengan **100% Pure Client-Side (HTML5, Vanilla CSS3, dan Vanilla JavaScript ES6+)**, Anda dapat menjalankannya dengan sangat fleksibel:
 
-1. **Clone Repository**
-   Buka terminal atau Git Bash, lalu jalankan perintah berikut di direktori root web server Anda (misal: `htdocs` atau `www`):
-   ```bash
-   git clone https://github.com/username/ilio-portfolio.git
-   ```
+### 1. Langsung Buka di Browser (Paling Praktis)
+- Klik dua kali berkas index.html untuk langsung membukanya di browser favorit Anda (Chrome, Edge, Firefox).
 
-2. **Jalankan Web Server**
-   Pastikan aplikasi web server lokal Anda (seperti XAMPP/Laragon) sudah dalam kondisi aktif (`Start Apache`).
+### 2. Menggunakan VS Code Live Server
+- Buka folder proyek di VS Code, klik kanan index.html, lalu pilih **Open with Live Server**.
 
-3. **Akses di Browser**
-   Buka peramban (browser) favorit Anda, lalu ketikkan URL berikut:
-   ```text
-   http://localhost/ilio-portfolio
-   ```
+### 3. Menggunakan Web Server Lokal (Opsional: XAMPP / Laragon)
+- Letakkan folder proyek di htdocs (XAMPP) atau www (Laragon) dan akses via http://localhost/ilio-portfolio.
 
 ---
 
-## 👥 Anggota Kelompok & Pembagian Tugas
+## ðŸ‘¥ Anggota Kelompok & Pembagian Tugas
 
 | Nama | Peran / Tugas | Profil GitHub |
 | :--- | :--- | :--- |
@@ -53,5 +47,5 @@ Untuk menjalankan proyek ini di lingkungan lokal (local server seperti XAMPP/Lar
 ---
 
 <p center="align">
-  <i>Dibuat dengan ❤️ oleh Mahasiswa Informatika UNSOED.</i>
+  <i>Dibuat dengan â¤ï¸ oleh Mahasiswa Informatika UNSOED.</i>
 </p>

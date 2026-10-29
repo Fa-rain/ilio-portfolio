@@ -16,6 +16,8 @@
    * 1. Storage & State Management
    * -------------------------------------------------------- */
   const STORAGE_KEY = 'ilio_karya_submissions';
+  let selectedPhotoFile = null;
+  let currentPhotoDataUrl = '';
 
   /**
    * Mengambil daftar karya tersimpan dari localStorage
@@ -53,6 +55,9 @@
     projectsGrid: document.getElementById('projects-grid'),
     metricKaryaCount: document.getElementById('metric-karya-count'),
     btnKaryaCount: document.getElementById('btn-karya-count'),
+    navKaryaCounts: document.querySelectorAll('.nav-karya-count'),
+    navSemuaKarya: document.getElementById('nav-semua-karya'),
+    btnShowAll: document.querySelector('.btn-show-all'),
     filterBtns: document.querySelectorAll('.filter-btn'),
 
     // Modal & Backdrop
@@ -70,6 +75,10 @@
     inputAuthor: document.getElementById('input-author'),
     inputDeskripsi: document.getElementById('input-deskripsi'),
     inputTech: document.getElementById('input-tech'),
+    inputFoto: document.getElementById('input-foto'),
+    fotoPreviewWrapper: document.getElementById('foto-preview-wrapper'),
+    fotoPreviewImg: document.getElementById('foto-preview-img'),
+    btnRemoveFoto: document.getElementById('btn-remove-foto'),
 
     // Error Message Elements
     errJudul: document.getElementById('err-judul'),
@@ -137,11 +146,47 @@
     if (DOM.btnKaryaCount) {
       DOM.btnKaryaCount.textContent = totalCards;
     }
+    document.querySelectorAll('.nav-karya-count').forEach((el) => {
+      el.textContent = totalCards;
+    });
   };
 
   /* --------------------------------------------------------
-   * 5. Filter Kategori Karya
+   * 5. Filter & Menampilkan Semua Karya
    * -------------------------------------------------------- */
+  /**
+   * Menampilkan seluruh karya yang ada di website (reset filter ke 'Semua')
+   * @param {Event} [e]
+   */
+  const showAllKarya = (e) => {
+    if (e) e.preventDefault();
+
+    // 1. Reset tombol filter agar tab 'Semua' aktif
+    if (DOM.filterBtns && DOM.filterBtns.length > 0) {
+      DOM.filterBtns.forEach((btn) => {
+        if (btn.getAttribute('data-filter') === 'all') {
+          btn.className = 'filter-btn active-tab';
+        } else {
+          btn.className = 'filter-btn';
+        }
+      });
+    }
+
+    // 2. Tampilkan seluruh kartu karya
+    const cards = document.querySelectorAll('.project-card');
+    cards.forEach((card) => {
+      card.style.display = 'flex';
+    });
+
+    // 3. Smooth scroll ke area katalog karya
+    const catalogSection = document.getElementById('karya-terbaru');
+    if (catalogSection) {
+      catalogSection.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    showToast(`Menampilkan seluruh ${cards.length} karya terdaftar.`);
+  };
+
   const initCategoryFilters = () => {
     if (!DOM.filterBtns || DOM.filterBtns.length === 0) return;
 
@@ -149,11 +194,11 @@
       btn.addEventListener('click', () => {
         // Reset state tombol filter
         DOM.filterBtns.forEach((b) => {
-          b.className = 'filter-btn px-4 py-2 rounded-lg font-label-md text-label-md font-medium transition-all bg-surface-container-lowest text-on-surface-variant border border-outline-variant hover:bg-surface-container-low hover:text-on-surface';
+          b.className = 'filter-btn';
         });
 
         // Set tombol aktif
-        btn.className = 'filter-btn active-tab px-4 py-2 rounded-lg font-label-md text-label-md font-medium transition-all bg-primary text-on-primary shadow-sm';
+        btn.className = 'filter-btn active-tab';
 
         const targetCategory = btn.getAttribute('data-filter') || 'all';
         const cards = document.querySelectorAll('.project-card');
@@ -168,11 +213,23 @@
         });
       });
     });
+
+    // Event listener untuk tombol 'Lihat Semua Karya' di Navbar & bawah katalog
+    DOM.navSemuaKarya?.addEventListener('click', showAllKarya);
+    DOM.btnShowAll?.addEventListener('click', showAllKarya);
   };
 
   /* --------------------------------------------------------
-   * 6. Modal Form Controller
+   * 6. Modal Form Controller & Photo Upload Handler
    * -------------------------------------------------------- */
+  const clearPhotoState = () => {
+    selectedPhotoFile = null;
+    currentPhotoDataUrl = '';
+    if (DOM.inputFoto) DOM.inputFoto.value = '';
+    if (DOM.fotoPreviewWrapper) DOM.fotoPreviewWrapper.classList.add('hidden');
+    if (DOM.fotoPreviewImg) DOM.fotoPreviewImg.src = '';
+  };
+
   const clearValidationErrors = () => {
     const inputs = [
       DOM.inputJudul,
@@ -207,7 +264,38 @@
     DOM.modalSubmit.classList.add('hidden');
     document.body.style.overflow = '';
     DOM.formSubmitKarya?.reset();
+    clearPhotoState();
     clearValidationErrors();
+  };
+
+  const initPhotoUploadHandlers = () => {
+    // Membaca file foto yang dipilih menggunakan FileReader
+    DOM.inputFoto?.addEventListener('change', (e) => {
+      const file = e.target.files?.[0];
+      if (!file) return;
+
+      if (!file.type.startsWith('image/')) {
+        showToast('Harap pilih file berupa gambar (JPG, PNG, WebP).');
+        DOM.inputFoto.value = '';
+        return;
+      }
+
+      selectedPhotoFile = file;
+
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        currentPhotoDataUrl = event.target.result;
+        if (DOM.fotoPreviewImg) DOM.fotoPreviewImg.src = currentPhotoDataUrl;
+        if (DOM.fotoPreviewWrapper) DOM.fotoPreviewWrapper.classList.remove('hidden');
+      };
+      reader.readAsDataURL(file);
+    });
+
+    // Tombol hapus foto di preview
+    DOM.btnRemoveFoto?.addEventListener('click', (e) => {
+      e.preventDefault();
+      clearPhotoState();
+    });
   };
 
   const initModalHandlers = () => {
@@ -230,6 +318,8 @@
         closeModal();
       }
     });
+
+    initPhotoUploadHandlers();
   };
 
   /* --------------------------------------------------------
@@ -256,51 +346,59 @@
       initials,
       deskripsi,
       techStack,
+      thumbnail,
     } = data;
 
     const card = document.createElement('div');
-    card.className = 'project-card group bg-surface-container-lowest rounded-xl border border-outline-variant p-space-md shadow-sm hover:shadow-md hover:border-primary/50 hover:-translate-y-1 transition-all flex flex-col justify-between';
+    card.className = 'project-card';
     card.setAttribute('data-category', kategori);
 
     const safeTechList = Array.isArray(techStack) && techStack.length > 0 ? techStack : ['General'];
     const badgeLabel = categoryLabels[kategori] || 'Portfolio';
+    const isCatSecondary = kategori === 'ml' || kategori === 'uiux';
+
+    const thumbnailHtml = thumbnail
+      ? `<img class="project-thumbnail" src="${escapeHtml(thumbnail)}" alt="${escapeHtml(judul)}" />`
+      : `<div style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; color: rgba(70, 72, 212, 0.4);">
+           <span class="material-symbols-outlined" style="font-size: 64px;">category</span>
+         </div>`;
 
     card.innerHTML = `
       <div>
-        <div class="relative w-full aspect-video rounded-lg overflow-hidden bg-surface-container-high mb-space-md flex items-center justify-center text-primary/40">
-          <span class="material-symbols-outlined text-6xl">category</span>
-          <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-sm text-primary font-label-sm text-label-sm font-semibold border border-outline-variant">
+        <div class="project-thumbnail-wrapper">
+          ${thumbnailHtml}
+          <span class="project-badge-category ${isCatSecondary ? 'cat-secondary' : 'cat-primary'}">
             ${escapeHtml(badgeLabel)}
           </span>
-          <span class="absolute top-3 right-3 px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-xs font-medium">
+          <span class="project-badge-contributors">
             ${escapeHtml(String(jumlahAnggota))} Kontributor
           </span>
         </div>
-        <h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold group-hover:text-primary transition-colors line-clamp-1">
+        <h3 class="project-title">
           ${escapeHtml(judul)}
         </h3>
-        <p class="font-body-sm text-body-sm text-on-surface-variant mt-space-xs line-clamp-2">
+        <p class="project-desc">
           ${escapeHtml(deskripsi)}
         </p>
-        <div class="flex flex-wrap gap-1.5 mt-space-md">
+        <div class="tech-stack-row">
           ${safeTechList
             .map(
-              (tech) => `<span class="px-2.5 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">${escapeHtml(tech)}</span>`
+              (tech) => `<span class="tech-chip">${escapeHtml(tech)}</span>`
             )
             .join('')}
         </div>
       </div>
-      <div class="pt-space-md mt-space-md border-t border-outline-variant flex items-center justify-between">
-        <div class="flex items-center gap-space-xs">
-          <div class="w-7 h-7 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center font-label-sm text-label-sm font-bold">
+      <div class="project-author-strip">
+        <div class="author-info">
+          <div class="author-avatar bg-primary-avatar">
             ${escapeHtml(initials)}
           </div>
-          <span class="font-body-sm text-body-sm text-on-surface font-medium truncate max-w-[130px]">
+          <span class="author-name">
             ${escapeHtml(author)}
           </span>
         </div>
-        <a class="inline-flex items-center gap-1 font-label-sm text-label-sm font-semibold text-primary hover:underline" href="#">
-          Detail <span class="material-symbols-outlined text-sm">arrow_forward</span>
+        <a class="link-detail" href="#">
+          Detail <span class="material-symbols-outlined" style="font-size: 14px;">arrow_forward</span>
         </a>
       </div>
     `;
@@ -393,6 +491,9 @@
         .join('')
         .toUpperCase() || 'IF';
 
+      // 5. Penanganan Foto (100% Murni Client-side Vanilla JS)
+      const finalThumbnail = currentPhotoDataUrl || '';
+
       const newKaryaData = {
         id: `karya-${Date.now()}`,
         judul: judulVal,
@@ -402,6 +503,7 @@
         initials,
         deskripsi: deskripsiVal,
         techStack: techList,
+        thumbnail: finalThumbnail,
         tanggalDibuat: new Date().toISOString().split('T')[0],
       };
 
@@ -414,12 +516,12 @@
         DOM.projectsGrid.prepend(cardElement);
       }
 
-      // 3. Sinkronisasi metrik jumlah karya
+      // 3. Sinkronisasi metrik jumlah karya (termasuk navbar)
       updateKaryaCount();
 
       // 4. Tutup modal & tampilkan toast
       closeModal();
-      showToast('Karya baru berhasil divalidasi dan ditambahkan ke daftar!');
+      showToast('Karya baru & foto berhasil disimpan ke sistem!');
     });
   };
 
@@ -450,4 +552,3 @@
     init();
   }
 })();
-
