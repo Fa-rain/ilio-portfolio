@@ -30,24 +30,15 @@
 
       <!-- Navigation Links -->
       <nav class="nav-links">
-        <a class="nav-link active" data-path="home" href="#" aria-current="page">Home</a>
-        <a class="nav-link" data-path="about" href="#kenapa-penting">About</a>
+        <a class="nav-link active" data-path="home" href="#home" aria-current="page">Home</a>
+        <a class="nav-link" data-path="about" href="#about">About</a>
         <a class="nav-link" id="nav-semua-karya" data-path="portfolio" href="#karya-terbaru" title="Lihat semua karya portofolio">
-          Lihat Semua Karya (<span class="nav-karya-count">6</span>)
+          Lihat Semua Karya (<span class="nav-karya-count">12</span>)
         </a>
       </nav>
 
       <!-- Right Action Items (Submit Button & Profile Picture) -->
       <div class="header-actions">
-        <!-- 'Submit Karya' Button in Navbar with #6366f1 -->
-        <a 
-          href="javascript:void(0)" 
-          class="open-submit-modal btn-submit-nav" 
-          data-path="submit-karya"
-          title="Submit Karya Baru"
-        >
-          Submit Karya
-        </a>
 
         <!-- Profile Photo from 'logo pp.jpg' -->
         <img 
@@ -70,7 +61,7 @@
       <div class="hero-glow-blur"></div>
 
       <!-- 1. HERO SECTION -->
-      <section class="container hero-content">
+      <section class="container hero-content" id="home">
         
         <!-- Cohort Indicator Badge -->
         <div class="cohort-badge">
@@ -91,7 +82,7 @@
 
         <!-- Hero Subtitle -->
         <p class="hero-subtitle">
-          Ruang etalase digital untuk merayakan inovasi, proyek rekayasa perangkat lunak, riset kecerdasan buatan, dan kreativitas mahasiswa Informatika Universitas Jenderal Soedirman angkatan 2026.
+          Ruang etalase digital untuk merayakan inovasi, proyek rekayasa perangkat lunak, riset kecerdasan buatan, dan kreativitas mahasiswa Informatika Universitas Jenderal Soedirman.
         </p>
 
         <!-- Action Button Row -->
@@ -108,7 +99,7 @@
         <!-- Minimalist Metric Strip (Validated Count of Works) -->
         <div class="metric-strip">
           <div class="metric-item">
-            <span id="metric-karya-count" class="metric-value text-primary">6</span>
+            <span id="metric-karya-count" class="metric-value text-primary">12</span>
             <span class="metric-title">Proyek Aktif</span>
             <span class="metric-desc">Tervalidasi &amp; Terverifikasi</span>
           </div>
@@ -127,14 +118,91 @@
       </section>
     </div>
 
-    
+    <section class="section-about" id="about">
+      <div class="container">
+        <div class="section-header-center">
+          <span class="pill-badge">Tentang Ilio</span>
+          <h2 class="section-title">Membangun Ruang untuk Berkarya</h2>
+          <p class="section-desc">
+            Ilio adalah platform portofolio digital mahasiswa Informatika UNSOED angkatan 2026 untuk memperkenalkan karya, berbagi ide, dan tumbuh bersama.
+          </p>
+        </div>
+
+        <div class="about-content-grid">
+          <article class="about-card about-background-card">
+            <div class="benefit-icon-wrapper bg-primary-light">
+              <span class="material-symbols-outlined" aria-hidden="true">lightbulb</span>
+            </div>
+            <h3 class="benefit-title">Latar Belakang</h3>
+            <p class="benefit-desc">
+              Banyak proyek mahasiswa menyimpan proses belajar dan solusi kreatif yang layak dikenal lebih luas. Ilio hadir sebagai etalase bersama agar karya mahasiswa Informatika UNSOED angkatan 2026 mudah ditemukan, diapresiasi, dan menjadi awal kolaborasi baru.
+            </p>
+          </article>
+
+          <article class="about-card">
+            <div class="benefit-icon-wrapper bg-secondary-light">
+              <span class="material-symbols-outlined" aria-hidden="true">visibility</span>
+            </div>
+            <h3 class="benefit-title">Visi</h3>
+            <p class="benefit-desc">
+              Menjadi ruang digital yang menghubungkan karya, talenta, dan peluang untuk mendorong ekosistem Informatika UNSOED yang kolaboratif dan berdampak.
+            </p>
+          </article>
+
+          <article class="about-card">
+            <div class="benefit-icon-wrapper bg-high-light">
+              <span class="material-symbols-outlined" aria-hidden="true">flag</span>
+            </div>
+            <h3 class="benefit-title">Misi</h3>
+            <ul class="about-mission-list">
+              <li>Menampilkan karya mahasiswa dalam katalog yang mudah dijelajahi.</li>
+              <li>Mendorong kolaborasi dan pertukaran ide lintas minat.</li>
+              <li>Membuka akses bagi komunitas dan mitra untuk mengenal talenta mahasiswa.</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="developer-section">
+          <div class="developer-section-heading">
+            <span class="section-label">
+              <span class="section-label-dot"></span>
+              Di balik Ilio
+            </span>
+            <h3 class="developer-section-title">Pengembang Website</h3>
+          </div>
+          <div class="developer-grid">
+            <article class="developer-card">
+              <span class="developer-avatar">FR</span>
+              <h4>Fauzan Ristian</h4>
+              <p>Project Manager</p>
+            </article>
+            <article class="developer-card">
+              <span class="developer-avatar">SA</span>
+              <h4>Satria Adidarma Herrinta</h4>
+              <p>Lead Developer</p>
+            </article>
+            <article class="developer-card">
+              <span class="developer-avatar">KC</span>
+              <h4>Khiranni Celia Saputri</h4>
+              <p>UI/UX Designer</p>
+            </article>
+            <article class="developer-card">
+              <span class="developer-avatar">MD</span>
+              <h4>Metta Dwi Waskithaning Dyah Ayu</h4>
+              <p>UI/UX Designer</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="section-why" id="kenapa-penting">
       <div class="container">
         
         <!-- Section Header -->
         <div class="section-header-center">
           <span class="pill-badge">
-            Nilai &amp; Visi
+            Manfaat Portofolio
           </span>
           <h2 class="section-title">
             Kenapa Portofolio Penting?
@@ -245,439 +313,14 @@
       </div>
 
       <!-- Projects Responsive Grid -->
-      <div class="projects-grid" id="projects-grid">
-        
-        <!-- Project Card 1: Simasda -->
-        <div class="project-card" data-category="web-mobile">
-          <div>
-            <div class="project-thumbnail-wrapper">
-              <img class="project-thumbnail" data-alt="Modern web interface dashboard for smart university campus navigation" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3VZ_mX--7cmm92ZMCn8tILrIVa3Iwzw2kshmQEnPnXs7VVfNBk6k7zgQ0ajM-fgLhglPuvTDTSLAJMcEpqDpBZWZoYXrz2s3zw69k_X8kjfRxk-QW6-_Y4kdePonIF8ZBDLXqxC_XRn8S_QhB4j0LCZMEYfY2HtgnIGN5BCEJYzdGyQEqjqAB0z2wLJQZv-6cmOJBGUXUtQNje3yDZ0h1rEddDYdXhxFqmNyN1hqR" />
-              <span class="project-badge-category cat-primary">
-                Web Application
-              </span>
-            </div>
-            <h3 class="project-title">
-              Simasda - Smart Campus Navigation
-            </h3>
-            <p class="project-desc">
-              Peta interaktif kampus UNSOED Purwokerto dengan perutean cerdas antar fakultas, jadwal ruang kuliah real-time, dan estimasi waktu tempuh.
-            </p>
-            <div class="tech-stack-row">
-              <span class="tech-chip">Next.js</span>
-              <span class="tech-chip">PostgreSQL</span>
-              <span class="tech-chip">Leaflet</span>
-            </div>
-          </div>
-          <div class="project-author-strip">
-            <div class="author-info">
-              <div class="author-avatar bg-primary-avatar">
-                RP
-              </div>
-              <span class="author-name">
-                Rian Pratama &amp; Tim
-              </span>
-            </div>
-            <a class="link-detail" href="#">
-              Detail <span class="material-symbols-outlined" style="font-size: 14px;">arrow_forward</span>
-            </a>
-          </div>
-        </div>
+      <div class="projects-grid" id="projects-grid" aria-live="polite"></div>
 
-        <!-- Project Card 2: AgriVision UNSOED -->
-        <div class="project-card" data-category="ml">
-          <div>
-            <div class="project-thumbnail-wrapper">
-              <img class="project-thumbnail" data-alt="Machine learning computer vision model interface detecting rice leaf blast disease" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCp9F3DuQYVqBVRKbBZYcCT1vKiQvTcQWK63P9UFANvcnMnIsHXUtj-5BhtUcHsh3Hj4yLuHOeBom6cZqhhDvrjirnY_tAc9e-DfyUiP6LgnWrIBAV4zyafnY3mHkasVi8BaBfGD86PcqP_NexDiJTdhJog669yNMWEP6qP83N5mAzdK_HO0E5TWFNw1uWY3iHhCKu18uuWx5OtOOg-EZgGuP8byqLQ2ltSgAiT14wA" />
-              <span class="project-badge-category cat-secondary">
-                Machine Learning
-              </span>
-            </div>
-            <h3 class="project-title">
-              AgriVision UNSOED - Deteksi Penyakit Padi
-            </h3>
-            <p class="project-desc">
-              Model klasifikasi citra daun tanaman padi di lahan Banyumas dengan akurasi 96.4% untuk diagnosis penyakit blast dan hawar pelepah.
-            </p>
-            <div class="tech-stack-row">
-              <span class="tech-chip">PyTorch</span>
-              <span class="tech-chip">FastAPI</span>
-              <span class="tech-chip">ResNet50</span>
-            </div>
-          </div>
-          <div class="project-author-strip">
-            <div class="author-info">
-              <div class="author-avatar bg-secondary-avatar">
-                NR
-              </div>
-              <span class="author-name">
-                Nadia Rahmawati
-              </span>
-            </div>
-            <a class="link-detail" href="#">
-              Detail <span class="material-symbols-outlined" style="font-size: 14px;">arrow_forward</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Project Card 3: Serayu IoT -->
-        <div class="project-card" data-category="iot">
-          <div>
-            <div class="project-thumbnail-wrapper">
-              <img class="project-thumbnail" data-alt="Internet of Things hardware prototype with microcontrollers monitoring Serayu river" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACIkcDwkUJy-B_fmdFB2rIQzsYBZuvsLuiNbmkPNnJp6MJWRYZBI-qFhgHkD0eCjLmpIOZtzzCFUZAaGSrV96KMVNNkjaacsNCLgayd7LRvG_JPJh2fejkyD7D-RvfnRNUsZk1wrg8tYP9pApKP9kA6lv12U8e0g09s-OShSSsn4Lybet0Vq4LALuZUskqe0R38oeGroiMrOXmkEu5YM7ex3JZm-c1hw-r6j6HpuzA" />
-              <span class="project-badge-category cat-primary">
-                IoT &amp; Hardware
-              </span>
-            </div>
-            <h3 class="project-title">
-              Serayu IoT - Monitoring Kualitas Air Sungai
-            </h3>
-            <p class="project-desc">
-              Sensor node nirkabel terapung untuk mengukur kekeruhan (NTU), pH, dan suhu aliran Sungai Serayu secara periodik via protokol MQTT.
-            </p>
-            <div class="tech-stack-row">
-              <span class="tech-chip">ESP32</span>
-              <span class="tech-chip">MQTT</span>
-              <span class="tech-chip">InfluxDB</span>
-            </div>
-          </div>
-          <div class="project-author-strip">
-            <div class="author-info">
-              <div class="author-avatar bg-dim-avatar">
-                BA
-              </div>
-              <span class="author-name">
-                Bima Arya Putra
-              </span>
-            </div>
-            <a class="link-detail" href="#">
-              Detail <span class="material-symbols-outlined" style="font-size: 14px;">arrow_forward</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Project Card 4: Banyumas Tour Guide AR -->
-        <div class="project-card" data-category="web-mobile">
-          <div>
-            <div class="project-thumbnail-wrapper">
-              <img class="project-thumbnail" data-alt="Augmented reality smartphone application camera viewport displaying 3D historic landmarks" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABQdOgSJ2NdcvN6D7muX-lbGBMyzxySfR8-yGicqgjDcgyiE3NzTcfMpvD_uuIvNWw63tczInIQ5Vic0f4tEOGAsUQkkiga-nODduerxCNhbeuA9IGIEXAvTR-TtGdNSkn3NRGsZcMYE6r__Mt6Mp005_Owg1KEoS8gqLFlF_yJrMGB1N1k22kNlY2QmKn6Ei1IDTNNuVys_E3o_JoD6eg5qS8PrfJ7dCKmJzxsvYP" />
-              <span class="project-badge-category cat-primary">
-                Mobile App
-              </span>
-            </div>
-            <h3 class="project-title">
-              Banyumas Tour Guide AR
-            </h3>
-            <p class="project-desc">
-              Aplikasi mobile edukasi wisata interaktif berbasis Augmented Reality yang menampilkan artefak 3D di Baturraden dan Museum Wayang.
-            </p>
-            <div class="tech-stack-row">
-              <span class="tech-chip">Flutter</span>
-              <span class="tech-chip">ARCore</span>
-              <span class="tech-chip">Blender</span>
-            </div>
-          </div>
-          <div class="project-author-strip">
-            <div class="author-info">
-              <div class="author-avatar bg-high-avatar">
-                FM
-              </div>
-              <span class="author-name">
-                Farhan Maulana
-              </span>
-            </div>
-            <a class="link-detail" href="#">
-              Detail <span class="material-symbols-outlined" style="font-size: 14px;">arrow_forward</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Project Card 5: Klinik Kampus Telemedicine UI Kit -->
-        <div class="project-card" data-category="uiux">
-          <div>
-            <div class="project-thumbnail-wrapper">
-              <img class="project-thumbnail" data-alt="Figma UI UX telemedicine design system showpiece featuring doctor appointment calendars" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZVRJWfnNsgoFF7_OlSf90Ys025xM07bpDbHbn7Q-Q-WVo4WeHPcZPmWde5KjX082p9Wmy18Xq3f-4dMcxj2A9lqWArwLXAodVYF5wcjj41WXSBPTf1OBWr3W_UkXL88FAUws27xVquCWhY1rRTTXB2cyr9ne1XJe1239PdtD411rDOVLrnLKgR_ZqI46Zw_AToPpfXVPAzfsSUPmIN50gSrh-dAfcUO--WYoXsIQs" />
-              <span class="project-badge-category cat-secondary">
-                UI/UX Design
-              </span>
-            </div>
-            <h3 class="project-title">
-              Klinik Kampus Telemedicine UI Kit
-            </h3>
-            <p class="project-desc">
-              Desain sistem antarmuka holistik untuk layanan konsultasi kesehatan mental &amp; rekam medis klinik pratama universitas.
-            </p>
-            <div class="tech-stack-row">
-              <span class="tech-chip">Figma</span>
-              <span class="tech-chip">Design System</span>
-              <span class="tech-chip">WCAG AAA</span>
-            </div>
-          </div>
-          <div class="project-author-strip">
-            <div class="author-info">
-              <div class="author-avatar bg-secondary-avatar">
-                AS
-              </div>
-              <span class="author-name">
-                Aulia Safitri
-              </span>
-            </div>
-            <a class="link-detail" href="#">
-              Detail <span class="material-symbols-outlined" style="font-size: 14px;">arrow_forward</span>
-            </a>
-          </div>
-        </div>
-
-        <!-- Project Card 6: Lencana -->
-        <div class="project-card" data-category="iot">
-          <div>
-            <div class="project-thumbnail-wrapper">
-              <img class="project-thumbnail" data-alt="Cryptographic decentralized smart contract dashboard showcasing academic diploma verification" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUXCZQ8BtahXW6h0aYvbPrYd11RBkaqvYRbE9S1FwdfgwHWHBLI_CJ7BE9tIkZTf9car1Cx3nNIY12CrZsSVXnidmuj5WXSYAFGdRKwPVcRYRNLvs9w2UURZBRnsvRiZtO0zxBeJYFNGx16pIM4A3EleigrsbbSUQCoTedgJ0K7_7r1EmY3-mMtHK2G0AN6WqEnyr7eqM1x5bis7UplgTqEdRjdyby6l0FmTPpX_Cv" />
-              <span class="project-badge-category cat-primary">
-                Blockchain &amp; Security
-              </span>
-            </div>
-            <h3 class="project-title">
-              Lencana - Decentralized Academic Credential
-            </h3>
-            <p class="project-desc">
-              Protokol verifikasi ijazah digital dan sertifikat asisten laboratorium anti-pemalsuan menggunakan immutable smart contract.
-            </p>
-            <div class="tech-stack-row">
-              <span class="tech-chip">Solidity</span>
-              <span class="tech-chip">Tailwind</span>
-              <span class="tech-chip">Ethers.js</span>
-            </div>
-          </div>
-          <div class="project-author-strip">
-            <div class="author-info">
-              <div class="author-avatar bg-primary-avatar">
-                DW
-              </div>
-              <span class="author-name">
-                Dimas Wicaksono
-              </span>
-            </div>
-            <a class="link-detail" href="#">
-              Detail <span class="material-symbols-outlined" style="font-size: 14px;">arrow_forward</span>
-            </a>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Bottom Catalog CTA -->
-      <div class="catalog-cta-center">
-        <button class="btn-show-all">
-          <span>Lihat Semua Karya (<span id="btn-karya-count">6</span>)</span>
-          <span class="material-symbols-outlined" style="font-size: 18px;">expand_more</span>
-        </button>
-      </div>
+      <nav class="project-pagination" id="project-pagination" aria-label="Pagination katalog proyek" hidden></nav>
 
     </section>
 
-    <!-- 4. CALLOUT / BANNER -->
-    <section class="container section-banner">
-      <div class="banner-card">
-        <div class="banner-content-row">
-          <div class="banner-text-wrapper">
-            <div class="banner-portal-tag">
-              <span class="material-symbols-outlined" style="font-size: 18px;">school</span>
-              Portal Kontribusi Angkatan
-            </div>
-            <h3 class="banner-title">
-              Mahasiswa Informatika 2026?
-            </h3>
-            <p class="banner-desc">
-              Publikasikan karya tugas besar, proyek mandiri, atau riset kompetisimu di platform Ilio agar terindeks di portofolio resmi kohor.
-            </p>
-          </div>
-          <div>
-            <a class="open-submit-modal btn-primary-action" data-path="submit-karya" href="javascript:void(0)">
-              <span class="material-symbols-outlined" style="font-size: 18px;">upload_file</span>
-              <span>Submit Karya</span>
-            </a>
-          </div>
-        </div>
-        <!-- Subtle Decorative Geometry Watermark -->
-        <div class="banner-watermark">
-          <span class="material-symbols-outlined">deployed_code</span>
-        </div>
-      </div>
-    </section>
 
   </main>
-
-  <!-- ========================================================
-       MODAL FORM: SUBMIT KARYA DENGAN VALIDASI ANGKA JUMLAH
-       ======================================================== -->
-  <div id="modal-submit-karya" class="modal-wrapper hidden">
-    <!-- Backdrop Overlay -->
-    <div id="modal-backdrop" class="modal-backdrop"></div>
-
-    <!-- Modal Card Content -->
-    <div class="modal-content">
-      
-      <!-- Modal Header -->
-      <div class="modal-header">
-        <div>
-          <h3 class="modal-title">
-            Submit Karya Baru
-          </h3>
-          <p class="modal-subtitle">
-            Daftarkan karya atau proyek portofolio mahasiswa Informatika 2026.
-          </p>
-        </div>
-        <button id="btn-close-modal" class="btn-close-modal" title="Tutup">
-          <span class="material-symbols-outlined" style="font-size: 24px;">close</span>
-        </button>
-      </div>
-
-      <!-- Submission Form -->
-      <form id="form-submit-karya" novalidate class="submit-form">
-        
-        <!-- Input: Judul Karya -->
-        <div class="form-group">
-          <label for="input-judul" class="form-label">
-            Judul Proyek / Karya <span class="text-error">*</span>
-          </label>
-          <input 
-            type="text" 
-            id="input-judul" 
-            class="input-field" 
-            placeholder="Contoh: Sistem AI Klasifikasi Tanah" 
-            required 
-          />
-          <span id="err-judul" class="error-message hidden">Judul karya wajib diisi.</span>
-        </div>
-
-        <!-- Dropdown: Kategori & VALIDASI ANGKA -->
-        <div class="form-row-2">
-          <div class="form-group">
-            <label for="input-kategori" class="form-label">
-              Kategori <span class="text-error">*</span>
-            </label>
-            <select 
-              id="input-kategori" 
-              class="input-field"
-            >
-              <option value="web-mobile">Web &amp; Mobile</option>
-              <option value="ml">Machine Learning</option>
-              <option value="iot">IoT &amp; Sistem</option>
-              <option value="uiux">UI/UX Design</option>
-            </select>
-          </div>
-
-          <!-- Input: VALIDASI ANGKA JUMLAH KARYA / ANGGOTA -->
-          <div class="form-group">
-            <label for="input-jumlah-karya" class="form-label">
-              Jumlah Anggota / Modul <span class="text-error">*</span>
-            </label>
-            <input 
-              type="number" 
-              id="input-jumlah-karya" 
-              min="1" 
-              step="1" 
-              class="input-field" 
-              placeholder="Angka (min: 1)" 
-              required 
-            />
-            <span id="err-jumlah-karya" class="error-message hidden">Harap masukkan angka bulat positif (minimal 1).</span>
-          </div>
-        </div>
-
-        <!-- Input: Nama Pembuat / Tim -->
-        <div class="form-group">
-          <label for="input-author" class="form-label">
-            Nama Pengembang / Tim <span class="text-error">*</span>
-          </label>
-          <input 
-            type="text" 
-            id="input-author" 
-            class="input-field" 
-            placeholder="Contoh: Muhammad Rizky &amp; Tim" 
-            required 
-          />
-          <span id="err-author" class="error-message hidden">Nama pembuat wajib diisi.</span>
-        </div>
-
-        <!-- Input: Deskripsi Singkat -->
-        <div class="form-group">
-          <label for="input-deskripsi" class="form-label">
-            Deskripsi Singkat Karya <span class="text-error">*</span>
-          </label>
-          <textarea 
-            id="input-deskripsi" 
-            rows="3" 
-            class="input-field" 
-            style="resize: none;" 
-            placeholder="Jelaskan secara ringkas fitur dan keunggulan proyek..." 
-            required
-          ></textarea>
-          <span id="err-deskripsi" class="error-message hidden">Deskripsi karya wajib diisi.</span>
-        </div>
-
-        <!-- Input: Tech Stack (Pisahkan dengan koma) -->
-        <div class="form-group">
-          <label for="input-tech" class="form-label">
-            Tech Stack (Pisahkan dengan koma)
-          </label>
-          <input 
-            type="text" 
-            id="input-tech" 
-            class="input-field" 
-            placeholder="Contoh: React, FastAPI, Tailwind" 
-          />
-        </div>
-
-        <!-- Input: Upload Foto / Thumbnail Karya -->
-        <div class="form-group">
-          <label for="input-foto" class="form-label">
-            Foto / Thumbnail Karya
-          </label>
-          <div class="file-upload-wrapper">
-            <input 
-              type="file" 
-              id="input-foto" 
-              accept="image/*" 
-              class="input-field" 
-            />
-            <p class="file-hint">Mendukung format JPG, PNG, WebP. Foto akan otomatis disimpan ke folder <code>karya/uploads/</code>.</p>
-            <div id="foto-preview-wrapper" class="foto-preview-wrapper hidden">
-              <img id="foto-preview-img" src="" alt="Preview Foto" class="foto-preview-img" />
-              <button type="button" id="btn-remove-foto" class="btn-remove-foto" title="Hapus foto">&times;</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Action Buttons -->
-        <div class="form-actions">
-          <button 
-            type="button" 
-            id="btn-cancel-modal" 
-            class="btn-cancel"
-          >
-            Batal
-          </button>
-          <button 
-            type="submit" 
-            class="btn-submit-nav"
-            style="display: inline-flex; align-items: center; gap: 0.5rem;"
-          >
-            <span class="material-symbols-outlined" style="font-size: 16px;">check_circle</span>
-            <span>Simpan Karya</span>
-          </button>
-        </div>
-
-      </form>
-
-    </div>
-  </div>
-
-  <!-- Toast Notification -->
-  <div id="toast-notif" class="toast-notification hidden">
-    <span class="material-symbols-outlined">check_circle</span>
-    <span id="toast-message">Karya berhasil dimasukkan dan jumlah karya diperbarui!</span>
-  </div>
 
   <!-- ========================================================
        FOOTER

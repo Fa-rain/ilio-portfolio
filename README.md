@@ -24,14 +24,13 @@
 
 Karena proyek ini dibangun dengan **100% Pure Client-Side (HTML5, Vanilla CSS3, dan Vanilla JavaScript ES6+)**, Anda dapat menjalankannya dengan sangat fleksibel:
 
-### 1. Langsung Buka di Browser (Paling Praktis)
-- Klik dua kali berkas index.html untuk langsung membukanya di browser favorit Anda (Chrome, Edge, Firefox).
-
-### 2. Menggunakan VS Code Live Server
+### 1. Menggunakan VS Code Live Server
 - Buka folder proyek di VS Code, klik kanan index.html, lalu pilih **Open with Live Server**.
 
-### 3. Menggunakan Web Server Lokal (Opsional: XAMPP / Laragon)
+### 2. Menggunakan Web Server Lokal (XAMPP / Laragon)
 - Letakkan folder proyek di htdocs (XAMPP) atau www (Laragon) dan akses via http://localhost/ilio-portfolio.
+
+Katalog membaca data dari `karya/karya.json` menggunakan `fetch`, jadi halaman perlu dijalankan melalui web server lokal dan tidak dapat memuat data jika `index.html` dibuka langsung lewat `file://`. Ubah atau tambahkan objek di file JSON tersebut untuk memperbarui katalog.
 
 ---
 

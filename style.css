@@ -180,6 +180,7 @@ button, input, select, textarea {
 }
 
 .nav-link {
+  position: relative;
   font-size: 14px;
   line-height: 20px;
   font-weight: 500;
@@ -194,6 +195,27 @@ button, input, select, textarea {
 .nav-link.active {
   color: var(--color-primary);
   font-weight: 600;
+}
+
+.nav-link::after {
+  position: absolute;
+  right: 0;
+  bottom: -8px;
+  left: 0;
+  height: 2px;
+  background-color: var(--color-primary);
+  content: '';
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease;
+}
+
+.nav-link.active::after {
+  transform: scaleX(1);
+}
+
+.nav-link.active:hover {
+  color: var(--color-primary);
 }
 
 .header-actions {
@@ -460,7 +482,108 @@ button, input, select, textarea {
   color: var(--color-on-surface-variant);
 }
 
-/* --- 5. SECTION: KENAPA PORTOFOLIO PENTING --- */
+/* --- 5. SECTION: ABOUT --- */
+.section-about {
+  padding: 4.5rem 0;
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-outline-variant);
+}
+
+.about-content-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.about-card {
+  padding: 1.5rem;
+  background-color: var(--color-surface-container-lowest);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+}
+
+.about-background-card {
+  grid-column: 1 / -1;
+}
+
+.about-mission-list {
+  display: grid;
+  gap: 0.75rem;
+  padding-left: 1.25rem;
+  color: var(--color-on-surface-variant);
+  font-size: 15px;
+  line-height: 24px;
+}
+
+.about-mission-list li::marker {
+  color: var(--color-primary);
+}
+
+.developer-section {
+  margin-top: 4rem;
+}
+
+.developer-section-heading {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.developer-section-heading .section-label {
+  justify-content: center;
+}
+
+.developer-section-title {
+  font-family: var(--font-headline);
+  font-size: 26px;
+  line-height: 34px;
+  font-weight: 700;
+  color: var(--color-on-surface);
+}
+
+.developer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.developer-card {
+  padding: 1.5rem 1rem;
+  text-align: center;
+  background-color: var(--color-surface-container-lowest);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: var(--radius-xl);
+}
+
+.developer-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 0.75rem;
+  border-radius: var(--radius-full);
+  background-color: var(--color-primary-fixed);
+  color: var(--color-primary);
+  font-family: var(--font-headline);
+  font-weight: 700;
+}
+
+.developer-card h4 {
+  font-family: var(--font-headline);
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 600;
+  color: var(--color-on-surface);
+}
+
+.developer-card p {
+  margin-top: 0.25rem;
+  color: var(--color-on-surface-variant);
+  font-size: 13px;
+  line-height: 20px;
+}
+
 .section-why {
   width: 100%;
   background-color: var(--color-surface-container-low);
@@ -469,6 +592,7 @@ button, input, select, textarea {
   padding: 4.5rem 0;
 }
 
+/* --- 6. SECTION: KENAPA PORTOFOLIO PENTING --- */
 .section-header-center {
   display: flex;
   flex-direction: column;
@@ -595,6 +719,13 @@ button, input, select, textarea {
   padding: 4.5rem 0;
 }
 
+#home,
+#about,
+#kenapa-penting,
+#karya-terbaru {
+  scroll-margin-top: 80px;
+}
+
 .catalog-header {
   display: flex;
   flex-direction: row;
@@ -659,6 +790,13 @@ button, input, select, textarea {
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   margin-bottom: 3rem;
+}
+
+.catalog-error {
+  grid-column: 1 / -1;
+  padding: 2rem 1rem;
+  color: var(--color-error);
+  text-align: center;
 }
 
 .project-card {
@@ -847,20 +985,29 @@ button, input, select, textarea {
   text-decoration: underline;
 }
 
-.catalog-cta-center {
+.project-pagination {
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 3rem;
 }
 
-.btn-show-all {
+.project-pagination[hidden] {
+  display: none;
+}
+
+.pagination-btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  justify-content: center;
+  min-width: 44px;
   height: 44px;
-  padding: 0 1.5rem;
+  padding: 0 0.875rem;
   border-radius: var(--radius-md);
   background-color: var(--color-surface-container-lowest);
-  color: var(--color-on-surface);
+  color: var(--color-on-surface-variant);
   font-size: 14px;
   font-weight: 500;
   border: 1px solid var(--color-outline-variant);
@@ -869,9 +1016,20 @@ button, input, select, textarea {
   transition: all 0.2s ease;
 }
 
-.btn-show-all:hover {
+.pagination-btn:hover:not(:disabled):not(.active) {
   background-color: var(--color-surface-container-low);
   border-color: var(--color-outline);
+}
+
+.pagination-btn.active {
+  background-color: var(--color-primary);
+  color: var(--color-on-primary);
+  border-color: var(--color-primary);
+}
+
+.pagination-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 /* --- 7. BANNER CALLOUT --- */
@@ -1284,6 +1442,10 @@ button, input, select, textarea {
   .projects-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .developer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 768px) {
@@ -1324,6 +1486,10 @@ button, input, select, textarea {
   }
 
   .benefit-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .developer-grid {
     grid-template-columns: 1fr;
   }
 

@@ -16,6 +16,10 @@
    * 1. Storage & State Management
    * -------------------------------------------------------- */
   const STORAGE_KEY = 'ilio_karya_submissions';
+  const PROJECTS_PER_PAGE = 6;
+  let projectsData = [];
+  let currentFilter = 'all';
+  let currentPage = 0;
   let selectedPhotoFile = null;
   let currentPhotoDataUrl = '';
 
@@ -26,7 +30,12 @@
   const getStoredKarya = () => {
     try {
       const data = localStorage.getItem(STORAGE_KEY);
-      return data ? JSON.parse(data) : [];
+      const parsedData = data ? JSON.parse(data) : [];
+      if (!Array.isArray(parsedData)) {
+        console.warn('[Ilio] Data karya di localStorage harus berupa daftar.');
+        return [];
+      }
+      return parsedData;
     } catch (err) {
       console.warn('[Ilio] Gagal memuat data dari localStorage:', err);
       return [];
@@ -54,10 +63,8 @@
     // Project Grid & Counters
     projectsGrid: document.getElementById('projects-grid'),
     metricKaryaCount: document.getElementById('metric-karya-count'),
-    btnKaryaCount: document.getElementById('btn-karya-count'),
-    navKaryaCounts: document.querySelectorAll('.nav-karya-count'),
+    projectPagination: document.getElementById('project-pagination'),
     navSemuaKarya: document.getElementById('nav-semua-karya'),
-    btnShowAll: document.querySelector('.btn-show-all'),
     filterBtns: document.querySelectorAll('.filter-btn'),
 
     // Modal & Backdrop
@@ -139,84 +146,149 @@
    * 4. Metrik & Hitung Jumlah Karya (Validasi Angka Terdaftar)
    * -------------------------------------------------------- */
   const updateKaryaCount = () => {
-    const totalCards = document.querySelectorAll('.project-card').length;
     if (DOM.metricKaryaCount) {
-      DOM.metricKaryaCount.textContent = totalCards;
-    }
-    if (DOM.btnKaryaCount) {
-      DOM.btnKaryaCount.textContent = totalCards;
+      DOM.metricKaryaCount.textContent = projectsData.length;
     }
     document.querySelectorAll('.nav-karya-count').forEach((el) => {
-      el.textContent = totalCards;
+      el.textContent = projectsData.length;
     });
   };
 
   /* --------------------------------------------------------
-   * 5. Filter & Menampilkan Semua Karya
+   * 5. Filter & Pagination Karya
    * -------------------------------------------------------- */
+  const getFilteredProjects = () => (
+    currentFilter === 'all'
+      ? projectsData
+      : projectsData.filter((project) => project.kategori === currentFilter)
+  );
+
+  const renderProjectPagination = (filteredProjects) => {
+    if (!DOM.projectPagination) return;
+
+    const pageCount = Math.ceil(filteredProjects.length / PROJECTS_PER_PAGE);
+    DOM.projectPagination.hidden = pageCount <= 1;
+    DOM.projectPagination.replaceChildren();
+    if (pageCount <= 1) return;
+
+    const addPageButton = (label, page, options = {}) => {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'pagination-btn';
+      button.textContent = label;
+      button.disabled = options.disabled || false;
+      if (options.current) {
+        button.classList.add('active');
+        button.setAttribute('aria-current', 'page');
+      }
+      button.addEventListener('click', () => {
+        currentPage = page;
+        renderProjectCards();
+        document.getElementById('karya-terbaru')?.scrollIntoView({ behavior: 'smooth' });
+      });
+      DOM.projectPagination.appendChild(button);
+    };
+
+    addPageButton('Sebelumnya', currentPage - 1, {
+      disabled: currentPage === 0,
+    });
+
+    for (let page = 0; page < pageCount; page += 1) {
+      addPageButton(String(page + 1), page, {
+        current: page === currentPage,
+      });
+    }
+
+    addPageButton('Berikutnya', currentPage + 1, {
+      disabled: currentPage === pageCount - 1,
+    });
+  };
+
+  const renderProjectCards = () => {
+    if (!DOM.projectsGrid) return;
+
+    const filteredProjects = getFilteredProjects();
+    const startIndex = currentPage * PROJECTS_PER_PAGE;
+    const visibleProjects = filteredProjects.slice(startIndex, startIndex + PROJECTS_PER_PAGE);
+    DOM.projectsGrid.replaceChildren();
+
+    visibleProjects.forEach((project) => {
+      DOM.projectsGrid.appendChild(createProjectCard(project));
+    });
+
+    renderProjectPagination(filteredProjects);
+  };
+
   /**
-   * Menampilkan seluruh karya yang ada di website (reset filter ke 'Semua')
+   * Mengembalikan katalog ke halaman pertama dan menampilkan semua kategori.
    * @param {Event} [e]
    */
   const showAllKarya = (e) => {
     if (e) e.preventDefault();
 
-    // 1. Reset tombol filter agar tab 'Semua' aktif
-    if (DOM.filterBtns && DOM.filterBtns.length > 0) {
-      DOM.filterBtns.forEach((btn) => {
-        if (btn.getAttribute('data-filter') === 'all') {
-          btn.className = 'filter-btn active-tab';
-        } else {
-          btn.className = 'filter-btn';
-        }
-      });
-    }
-
-    // 2. Tampilkan seluruh kartu karya
-    const cards = document.querySelectorAll('.project-card');
-    cards.forEach((card) => {
-      card.style.display = 'flex';
+    currentFilter = 'all';
+    currentPage = 0;
+    DOM.filterBtns.forEach((btn) => {
+      const isAllFilter = btn.getAttribute('data-filter') === 'all';
+      btn.classList.toggle('active-tab', isAllFilter);
     });
+    renderProjectCards();
 
-    // 3. Smooth scroll ke area katalog karya
     const catalogSection = document.getElementById('karya-terbaru');
-    if (catalogSection) {
-      catalogSection.scrollIntoView({ behavior: 'smooth' });
-    }
+    catalogSection?.scrollIntoView({ behavior: 'smooth' });
 
-    showToast(`Menampilkan seluruh ${cards.length} karya terdaftar.`);
+    showToast(`Katalog berisi ${projectsData.length} karya; maksimal 6 karya ditampilkan per halaman.`);
   };
 
   const initCategoryFilters = () => {
-    if (!DOM.filterBtns || DOM.filterBtns.length === 0) return;
-
     DOM.filterBtns.forEach((btn) => {
       btn.addEventListener('click', () => {
-        // Reset state tombol filter
-        DOM.filterBtns.forEach((b) => {
-          b.className = 'filter-btn';
+        DOM.filterBtns.forEach((filterButton) => {
+          filterButton.classList.remove('active-tab');
         });
-
-        // Set tombol aktif
-        btn.className = 'filter-btn active-tab';
-
-        const targetCategory = btn.getAttribute('data-filter') || 'all';
-        const cards = document.querySelectorAll('.project-card');
-
-        cards.forEach((card) => {
-          const cardCategory = card.getAttribute('data-category');
-          if (targetCategory === 'all' || cardCategory === targetCategory) {
-            card.style.display = 'flex';
-          } else {
-            card.style.display = 'none';
-          }
-        });
+        btn.classList.add('active-tab');
+        currentFilter = btn.getAttribute('data-filter') || 'all';
+        currentPage = 0;
+        renderProjectCards();
       });
     });
-
-    // Event listener untuk tombol 'Lihat Semua Karya' di Navbar & bawah katalog
     DOM.navSemuaKarya?.addEventListener('click', showAllKarya);
-    DOM.btnShowAll?.addEventListener('click', showAllKarya);
+  };
+
+  const initSectionNavigation = () => {
+    const sections = [
+      { id: 'home', path: 'home' },
+      { id: 'about', path: 'about' },
+      { id: 'kenapa-penting', path: 'about' },
+      { id: 'karya-terbaru', path: 'portfolio' },
+    ];
+    const navLinks = document.querySelectorAll('.nav-link[data-path]');
+
+    const updateActiveSection = () => {
+      const activationPoint = window.scrollY + 120;
+      let activePath = sections[0].path;
+
+      sections.forEach(({ id, path }) => {
+        const section = document.getElementById(id);
+        if (section && section.getBoundingClientRect().top + window.scrollY <= activationPoint) {
+          activePath = path;
+        }
+      });
+
+      navLinks.forEach((link) => {
+        const isActive = link.getAttribute('data-path') === activePath;
+        link.classList.toggle('active', isActive);
+        if (isActive) {
+          link.setAttribute('aria-current', 'location');
+        } else {
+          link.removeAttribute('aria-current');
+        }
+      });
+    };
+
+    window.addEventListener('scroll', updateActiveSection, { passive: true });
+    window.addEventListener('hashchange', updateActiveSection);
+    updateActiveSection();
   };
 
   /* --------------------------------------------------------
@@ -354,7 +426,7 @@
     card.setAttribute('data-category', kategori);
 
     const safeTechList = Array.isArray(techStack) && techStack.length > 0 ? techStack : ['General'];
-    const badgeLabel = categoryLabels[kategori] || 'Portfolio';
+    const badgeLabel = data.kategoriLabel || categoryLabels[kategori] || 'Portfolio';
     const isCatSecondary = kategori === 'ml' || kategori === 'uiux';
 
     const thumbnailHtml = thumbnail
@@ -510,11 +582,9 @@
       // 1. Simpan ke localStorage agar tersimpan persisten
       saveKaryaToStorage(newKaryaData);
 
-      // 2. Render kartu baru ke DOM
-      if (DOM.projectsGrid) {
-        const cardElement = createProjectCard(newKaryaData);
-        DOM.projectsGrid.prepend(cardElement);
-      }
+      projectsData.unshift(newKaryaData);
+      currentPage = 0;
+      renderProjectCards();
 
       // 3. Sinkronisasi metrik jumlah karya (termasuk navbar)
       updateKaryaCount();
@@ -528,21 +598,42 @@
   /* --------------------------------------------------------
    * 8. Inisialisasi Data Tersimpan & App Bootstrap
    * -------------------------------------------------------- */
-  const loadStoredKarya = () => {
+  const loadProjectData = async () => {
     if (!DOM.projectsGrid) return;
-    const stored = getStoredKarya();
-    stored.forEach((item) => {
-      const card = createProjectCard(item);
-      DOM.projectsGrid.prepend(card);
-    });
+
+    const response = await fetch('karya/karya.json');
+    if (!response.ok) {
+      throw new Error(`Gagal memuat data karya (HTTP ${response.status}).`);
+    }
+
+    const data = await response.json();
+    if (!Array.isArray(data)) {
+      throw new Error('Format data karya harus berupa array JSON.');
+    }
+
+    projectsData = [...getStoredKarya(), ...data];
+    updateKaryaCount();
+    renderProjectCards();
   };
 
-  const init = () => {
-    loadStoredKarya();
-    updateKaryaCount();
+  const init = async () => {
     initCategoryFilters();
+    initSectionNavigation();
     initModalHandlers();
     initFormValidation();
+
+    try {
+      await loadProjectData();
+    } catch (error) {
+      console.error('[Ilio] Katalog karya gagal dimuat:', error);
+      if (DOM.projectsGrid) {
+        const message = document.createElement('p');
+        message.className = 'catalog-error';
+        message.textContent = 'Katalog karya gagal dimuat. Silakan coba lagi nanti.';
+        DOM.projectsGrid.replaceChildren(message);
+      }
+      if (DOM.projectPagination) DOM.projectPagination.hidden = true;
+    }
   };
 
   // Jalankan bootstrap saat DOM siap
