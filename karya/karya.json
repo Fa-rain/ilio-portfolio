@@ -9,7 +9,7 @@
     "initials": "RP",
     "deskripsi": "Peta interaktif kampus UNSOED Purwokerto dengan perutean cerdas antar fakultas, jadwal ruang kuliah real-time, dan estimasi waktu tempuh.",
     "techStack": ["Next.js", "PostgreSQL", "Leaflet"],
-    "thumbnail": "images/project-placeholder.svg",
+    "thumbnail": "images/Simasda.jpg",
     "tanggalDibuat": "2026-10-28"
   },
   {
@@ -22,7 +22,7 @@
     "initials": "NR",
     "deskripsi": "Model klasifikasi citra daun tanaman padi di lahan Banyumas dengan akurasi 96.4% untuk diagnosis penyakit blast dan hawar pelepah.",
     "techStack": ["PyTorch", "FastAPI", "ResNet50"],
-    "thumbnail": "images/project-placeholder.svg",
+    "thumbnail": "images/AgriVision.jpg",
     "tanggalDibuat": "2026-10-28"
   },
   {
@@ -35,7 +35,7 @@
     "initials": "BA",
     "deskripsi": "Sensor node nirkabel terapung untuk mengukur kekeruhan (NTU), pH, dan suhu aliran Sungai Serayu secara periodik via protokol MQTT.",
     "techStack": ["ESP32", "MQTT", "InfluxDB"],
-    "thumbnail": "images/project-placeholder.svg",
+    "thumbnail": "images/Serayu IoT.jpg",
     "tanggalDibuat": "2026-10-28"
   },
   {
@@ -48,7 +48,7 @@
     "initials": "FM",
     "deskripsi": "Aplikasi mobile edukasi wisata interaktif berbasis Augmented Reality yang menampilkan artefak 3D di Baturraden dan Museum Wayang.",
     "techStack": ["Flutter", "ARCore", "Blender"],
-    "thumbnail": "images/project-placeholder.svg",
+    "thumbnail": "images/Banyumas Tour Guide AR.jpg",
     "tanggalDibuat": "2026-10-28"
   },
   {
@@ -61,7 +61,7 @@
     "initials": "AS",
     "deskripsi": "Desain sistem antarmuka holistik untuk layanan konsultasi kesehatan mental & rekam medis klinik pratama universitas.",
     "techStack": ["Figma", "Design System", "WCAG AAA"],
-    "thumbnail": "images/project-placeholder.svg",
+    "thumbnail": "images/Klinik Kampus Telemedicine UI Kit.jpg",
     "tanggalDibuat": "2026-10-28"
   },
   {
@@ -74,7 +74,7 @@
     "initials": "DW",
     "deskripsi": "Protokol verifikasi ijazah digital dan sertifikat asisten laboratorium anti-pemalsuan menggunakan immutable smart contract.",
     "techStack": ["Solidity", "Tailwind", "Ethers.js"],
-    "thumbnail": "images/project-placeholder.svg",
+    "thumbnail": "images/Decentralized Academic Credential.jpg",
     "tanggalDibuat": "2026-10-28"
   },
   {
