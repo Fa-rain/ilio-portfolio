@@ -252,6 +252,20 @@
         renderProjectCards();
       });
     });
+
+    DOM.projectsGrid?.addEventListener('click', (event) => {
+      const detailButton = event.target.closest('.link-detail');
+      if (!detailButton || !DOM.projectsGrid.contains(detailButton)) return;
+
+      const projectCard = detailButton.closest('.project-card');
+      const projectDetails = projectCard?.querySelector('.project-details');
+      if (!projectDetails) return;
+
+      const isExpanded = detailButton.getAttribute('aria-expanded') === 'true';
+      detailButton.setAttribute('aria-expanded', String(!isExpanded));
+      projectDetails.hidden = isExpanded;
+    });
+
     DOM.navSemuaKarya?.addEventListener('click', showAllKarya);
   };
 
@@ -428,6 +442,7 @@
     const safeTechList = Array.isArray(techStack) && techStack.length > 0 ? techStack : ['General'];
     const badgeLabel = data.kategoriLabel || categoryLabels[kategori] || 'Portfolio';
     const isCatSecondary = kategori === 'ml' || kategori === 'uiux';
+    const githubUrl = `https://github.com/example/${encodeURIComponent(String(data.id || 'ilio-project'))}`;
 
     const thumbnailHtml = thumbnail
       ? `<img class="project-thumbnail" src="${escapeHtml(thumbnail)}" alt="${escapeHtml(judul)}" />`
@@ -469,8 +484,14 @@
             ${escapeHtml(author)}
           </span>
         </div>
-        <a class="link-detail" href="#">
+        <button class="link-detail" type="button" aria-expanded="false">
           Detail <span class="material-symbols-outlined" style="font-size: 14px;">arrow_forward</span>
+        </button>
+      </div>
+      <div class="project-details" hidden>
+        <span class="project-details-label">Repositori GitHub</span>
+        <a class="project-github-link" href="${escapeHtml(githubUrl)}" target="_blank" rel="noopener noreferrer">
+          Lihat repositori di GitHub
         </a>
       </div>
     `;
