@@ -1,10 +1,10 @@
-﻿# ðŸš€ Ilio - Website Portofolio Informatika UNSOED
+﻿# 🤖 Ilio - Website Portofolio Informatika UNSOED
 
 **Ilio** adalah sebuah platform situs web yang dirancang khusus untuk menampilkan berbagai karya dan proyek terbaik dari Mahasiswa Jurusan Informatika Universitas Jenderal Soedirman (UNSOED). Platform ini dibangun sebagai wadah apresiasi sekaligus katalisator untuk memantik ide-ide kreatif dan inovatif lainnya.
 
 ---
 
-## ðŸ“Œ Fitur Utama
+## 🚵 Fitur Utama
 
 - **Homepage**: Tampilan utama yang menarik dan informatif.
 - **Navigation Bar**: Navigasi yang responsif untuk mempermudah pemrosesan antar halaman.
@@ -13,7 +13,7 @@
 
 ---
 
-## ðŸ› ï¸ Teknologi yang Digunakan
+## ⚒️ Teknologi yang Digunakan
 
 - **Frontend**: HTML5, CSS3, Vanilla JavaScript (ES6+)
 - **Version Control**: Git & GitHub
@@ -34,7 +34,7 @@ Katalog membaca data dari `karya/karya.json` menggunakan `fetch`, jadi halaman p
 
 ---
 
-## ðŸ‘¥ Anggota Kelompok & Pembagian Tugas
+## 👨‍👩‍👧‍👦 Anggota Kelompok & Pembagian Tugas
 
 | Nama | Peran / Tugas | Profil GitHub |
 | :--- | :--- | :--- |
