@@ -1,10 +1,10 @@
-﻿# 🤖 Ilio - Website Portofolio Informatika UNSOED
+# 🚀 Ilio - Website Portofolio Informatika UNSOED
 
 **Ilio** adalah sebuah platform situs web yang dirancang khusus untuk menampilkan berbagai karya dan proyek terbaik dari Mahasiswa Jurusan Informatika Universitas Jenderal Soedirman (UNSOED). Platform ini dibangun sebagai wadah apresiasi sekaligus katalisator untuk memantik ide-ide kreatif dan inovatif lainnya.
 
 ---
 
-## 🚵 Fitur Utama
+## 📌 Fitur Utama
 
 - **Homepage**: Tampilan utama yang menarik dan informatif.
 - **Navigation Bar**: Navigasi yang responsif untuk mempermudah pemrosesan antar halaman.
@@ -13,7 +13,7 @@
 
 ---
 
-## ⚒️ Teknologi yang Digunakan
+## 🛠️ Teknologi yang Digunakan
 
 - **Frontend**: HTML5, CSS3, Vanilla JavaScript (ES6+)
 - **Version Control**: Git & GitHub
@@ -22,29 +22,33 @@
 
 ## 💻 Cara Menjalankan di Lokal
 
-Karena proyek ini dibangun dengan **100% Pure Client-Side (HTML5, Vanilla CSS3, dan Vanilla JavaScript ES6+)**, Anda dapat menjalankannya dengan sangat fleksibel:
+Untuk menjalankan proyek ini di lingkungan lokal (local server seperti XAMPP/Laragon/Live Server), ikuti langkah-langkah berikut:
 
-### 1. Menggunakan VS Code Live Server
-- Buka folder proyek di VS Code, klik kanan index.html, lalu pilih **Open with Live Server**.
+1. **Clone Repository**
+   Buka terminal atau Git Bash, lalu jalankan perintah berikut di direktori root web server Anda (misal: `htdocs` atau `www`):
+   ```bash
+   git clone https://github.com/username/ilio-portfolio.git
+   ```
 
-### 2. Menggunakan Web Server Lokal (XAMPP / Laragon)
-- Letakkan folder proyek di htdocs (XAMPP) atau www (Laragon) dan akses via http://localhost/ilio-portfolio.
+2. **Jalankan Web Server**
+   Pastikan aplikasi web server lokal Anda (seperti XAMPP/Laragon) sudah dalam kondisi aktif (`Start Apache`).
 
-Katalog membaca data dari `karya/karya.json` menggunakan `fetch`, jadi halaman perlu dijalankan melalui web server lokal dan tidak dapat memuat data jika `index.html` dibuka langsung lewat `file://`. Ubah atau tambahkan objek di file JSON tersebut untuk memperbarui katalog.
+3. **Akses di Browser**
+   Buka peramban (browser) favorit Anda, lalu ketikkan URL berikut:
+   ```text
+   http://localhost/ilio-portfolio
+   ```
 
 ---
 
-## 👨‍👩‍👧‍👦 Anggota Kelompok & Pembagian Tugas
+## 👥 Anggota Kelompok & Pembagian Tugas
 
 | Nama | Peran / Tugas | Profil GitHub |
 | :--- | :--- | :--- |
-| **Fauzan Ristian** | Project Manager | [@fauzan](https://github.com/) |
-| **Satria Adidarma Herrinta** | Lead Developer | [@satria](https://github.com/) |
-| **Khiranni Celia Saputri** | UI/UX Designer | [@celia](https://github.com/) |
-| **Metta Dwi Waskithaning Dyah Ayu** | UI/UX Designer | [@metta](https://github.com/) |
+| **Fauzan Ristian** | Project Manager | [@fauzan](https://github.com/Fa-rain) |
+| **Satria Adidarma Herrinta** | Lead Developer | [@satria](https://github.com/Satriadarma3) |
+| **Khiranni Celia Saputri** | UI/UX Designer | [@celia](https://github.com/khiranCelia) |
+| **Metta Dwi Waskithaning Dyah Ayu** | UI/UX Designer | [@metta](https://github.com/mettaayu) |
 
 ---
 
-<p center="align">
-  <i>Dibuat dengan â¤ï¸ oleh Mahasiswa Informatika UNSOED.</i>
-</p>
