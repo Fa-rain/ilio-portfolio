@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ilio - Platform Portofolio Informatika UNSOED '26</title>
+
+  <!-- Google Fonts: Material Symbols & Web Typography -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" />
+
+  
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- ========================================================
+       TOP NAVIGATION BAR
+       ======================================================== -->
+  <header class="site-header">
+    <div class="container header-container">
+      
+      <!-- Brand Logo & Cohort Tag -->
+      <div class="brand-wrapper">
+        <a href="#" class="brand-logo">Ilio</a>
+        <span class="cohort-tag">
+          Informatics '26
+        </span>
+      </div>
+
+      <!-- Navigation Links -->
+      <nav class="nav-links">
+        <a class="nav-link active" data-path="home" href="#home" aria-current="page">Home</a>
+        <a class="nav-link" data-path="about" href="#about">About</a>
+        <a class="nav-link" id="nav-semua-karya" data-path="portfolio" href="#karya-terbaru" title="Lihat semua karya portofolio">
+          Lihat Semua Karya (<span class="nav-karya-count">12</span>)
+        </a>
+      </nav>
+
+      <!-- Right Action Items (Submit Button & Profile Picture) -->
+      <div class="header-actions">
+
+        <!-- Profile Photo from 'logo pp.jpg' -->
+        <img 
+          alt="Profile" 
+          class="profile-avatar" 
+          src="logo pp.jpg" 
+        />
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ========================================================
+       MAIN PAGE CONTENT
+       ======================================================== -->
+  <main style="padding-top: 64px;">
+    
+    <!-- Top Decorative Blur Gradient Backdrop -->
+    <div class="hero-wrapper">
+      <div class="hero-glow-blur"></div>
+
+      <!-- 1. HERO SECTION -->
+      <section class="container hero-content" id="home">
+        
+        <!-- Cohort Indicator Badge -->
+        <div class="cohort-badge">
+          <span class="ping-indicator">
+            <span class="ping-circle-animate"></span>
+            <span class="ping-circle-solid"></span>
+          </span>
+          <span class="badge-text">
+            Kolektif Informatika UNSOED '26
+          </span>
+        </div>
+
+        <!-- Main Hero Headline -->
+        <h1 class="hero-title">
+          Ideas become projects.<br />
+          <span class="text-primary">Projects create impact.</span>
+        </h1>
+
+        <!-- Hero Subtitle -->
+        <p class="hero-subtitle">
+          Ruang etalase digital untuk merayakan inovasi, proyek rekayasa perangkat lunak, riset kecerdasan buatan, dan kreativitas mahasiswa Informatika Universitas Jenderal Soedirman.
+        </p>
+
+        <!-- Action Button Row -->
+        <div class="hero-actions">
+          <a class="btn-primary-action" href="#karya-terbaru">
+            <span>Jelajahi Portofolio</span>
+            <span class="material-symbols-outlined" style="font-size: 18px;">arrow_forward</span>
+          </a>
+          <a class="btn-secondary-action" href="#kenapa-penting">
+            Pelajari Lebih Lanjut
+          </a>
+        </div>
+
+        <!-- Minimalist Metric Strip (Validated Count of Works) -->
+        <div class="metric-strip">
+          <div class="metric-item">
+            <span id="metric-karya-count" class="metric-value text-primary">12</span>
+            <span class="metric-title">Proyek Aktif</span>
+            <span class="metric-desc">Tervalidasi &amp; Terverifikasi</span>
+          </div>
+          <div class="metric-item">
+            <span class="metric-value">120</span>
+            <span class="metric-title">Mahasiswa</span>
+            <span class="metric-desc">Kohor 2026 Purwokerto</span>
+          </div>
+          <div class="metric-item">
+            <span class="metric-value text-primary">4</span>
+            <span class="metric-title">Peminatan Teknis</span>
+            <span class="metric-desc">SE, AI/Data, Cyber, UI/UX</span>
+          </div>
+        </div>
+
+      </section>
+    </div>
+
+    <section class="section-about" id="about">
+      <div class="container">
+        <div class="section-header-center">
+          <span class="pill-badge">Tentang Ilio</span>
+          <h2 class="section-title">Membangun Ruang untuk Berkarya</h2>
+          <p class="section-desc">
+            Ilio adalah platform portofolio digital mahasiswa Informatika UNSOED angkatan 2026 untuk memperkenalkan karya, berbagi ide, dan tumbuh bersama.
+          </p>
+        </div>
+
+        <div class="about-content-grid">
+          <article class="about-card about-background-card">
+            <div class="benefit-icon-wrapper bg-primary-light">
+              <span class="material-symbols-outlined" aria-hidden="true">lightbulb</span>
+            </div>
+            <h3 class="benefit-title">Latar Belakang</h3>
+            <p class="benefit-desc">
+              Banyak proyek mahasiswa menyimpan proses belajar dan solusi kreatif yang layak dikenal lebih luas. Ilio hadir sebagai etalase bersama agar karya mahasiswa Informatika UNSOED angkatan 2026 mudah ditemukan, diapresiasi, dan menjadi awal kolaborasi baru.
+            </p>
+          </article>
+
+          <article class="about-card">
+            <div class="benefit-icon-wrapper bg-secondary-light">
+              <span class="material-symbols-outlined" aria-hidden="true">visibility</span>
+            </div>
+            <h3 class="benefit-title">Visi</h3>
+            <p class="benefit-desc">
+              Menjadi ruang digital yang menghubungkan karya, talenta, dan peluang untuk mendorong ekosistem Informatika UNSOED yang kolaboratif dan berdampak.
+            </p>
+          </article>
+
+          <article class="about-card">
+            <div class="benefit-icon-wrapper bg-high-light">
+              <span class="material-symbols-outlined" aria-hidden="true">flag</span>
+            </div>
+            <h3 class="benefit-title">Misi</h3>
+            <ul class="about-mission-list">
+              <li>Menampilkan karya mahasiswa dalam katalog yang mudah dijelajahi.</li>
+              <li>Mendorong kolaborasi dan pertukaran ide lintas minat.</li>
+              <li>Membuka akses bagi komunitas dan mitra untuk mengenal talenta mahasiswa.</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="developer-section">
+          <div class="developer-section-heading">
+            <span class="section-label">
+              <span class="section-label-dot"></span>
+              Di balik Ilio
+            </span>
+            <h3 class="developer-section-title">Pengembang Website</h3>
+          </div>
+          <div class="developer-grid">
+            <article class="developer-card">
+              <span class="developer-avatar">FR</span>
+              <h4>Fauzan Ristian</h4>
+              <p>Project Manager</p>
+            </article>
+            <article class="developer-card">
+              <span class="developer-avatar">SA</span>
+              <h4>Satria Adidarma Herrinta</h4>
+              <p>Lead Developer</p>
+            </article>
+            <article class="developer-card">
+              <span class="developer-avatar">KC</span>
+              <h4>Khiranni Celia Saputri</h4>
+              <p>UI/UX Designer</p>
+            </article>
+            <article class="developer-card">
+              <span class="developer-avatar">MD</span>
+              <h4>Metta Dwi Waskithaning Dyah Ayu</h4>
+              <p>UI/UX Designer</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-why" id="kenapa-penting">
+      <div class="container">
+        
+        <!-- Section Header -->
+        <div class="section-header-center">
+          <span class="pill-badge">
+            Manfaat Portofolio
+          </span>
+          <h2 class="section-title">
+            Kenapa Portofolio Penting?
+          </h2>
+          <p class="section-desc">
+            Membangun jejak rekayasa dan membuka peluang industri sejak bangku kuliah.
+          </p>
+        </div>
+
+        <!-- 3 Benefit Cards -->
+        <div class="benefit-grid">
+          
+          <!-- Benefit Card 1 -->
+          <div class="benefit-card">
+            <div>
+              <div class="benefit-icon-wrapper bg-primary-light">
+                <span class="material-symbols-outlined" style="font-size: 24px;">terminal</span>
+              </div>
+              <h3 class="benefit-title">
+                Validasi Kompetensi Praktis
+              </h3>
+              <p class="benefit-desc">
+                Membuktikan penguasaan algoritma, arsitektur sistem, dan teknologi modern melalui hasil karya nyata yang dapat diakses publik dan recruiter.
+              </p>
+            </div>
+            <div class="benefit-footer text-primary">
+              <span>Standar rekayasa industri</span>
+              <span class="material-symbols-outlined" style="font-size: 16px;">check_circle</span>
+            </div>
+          </div>
+
+          <!-- Benefit Card 2 -->
+          <div class="benefit-card">
+            <div>
+              <div class="benefit-icon-wrapper bg-secondary-light">
+                <span class="material-symbols-outlined" style="font-size: 24px;">hub</span>
+              </div>
+              <h3 class="benefit-title">
+                Kolaborasi Lintas Disiplin
+              </h3>
+              <p class="benefit-desc">
+                Memfasilitasi pertukaran ide, pembentukan tim riset kompetisi, dan proyek open-source antar mahasiswa Informatika angkatan 2026.
+              </p>
+            </div>
+            <div class="benefit-footer text-secondary">
+              <span>Sinergi antar-mahasiswa</span>
+              <span class="material-symbols-outlined" style="font-size: 16px;">group</span>
+            </div>
+          </div>
+
+          <!-- Benefit Card 3 -->
+          <div class="benefit-card">
+            <div>
+              <div class="benefit-icon-wrapper bg-high-light">
+                <span class="material-symbols-outlined" style="font-size: 24px;">rocket_launch</span>
+              </div>
+              <h3 class="benefit-title">
+                Jembatan Karier &amp; Industri
+              </h3>
+              <p class="benefit-desc">
+                Katalog siap-akses bagi mitra industri, alumni, dan institusi untuk menemukan talenta muda berbakat dari kampus UNSOED Purwokerto.
+              </p>
+            </div>
+            <div class="benefit-footer text-primary">
+              <span>Akses mitra &amp; alumni UNSOED</span>
+              <span class="material-symbols-outlined" style="font-size: 16px;">verified</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 3. SECTION: KARYA TERBARU (RECENT PROJECTS) -->
+    <section class="container section-catalog" id="karya-terbaru">
+      
+      <!-- Section Title & Filter Tabs -->
+      <div class="catalog-header">
+        <div>
+          <div class="section-label">
+            <span class="section-label-dot"></span>
+            Katalog Terkini
+          </div>
+          <h2 class="section-title">
+            Karya Terbaru
+          </h2>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="filter-group" id="filter-container">
+          <button class="filter-btn active-tab" data-filter="all">
+            Semua
+          </button>
+          <button class="filter-btn" data-filter="web-mobile">
+            Web &amp; Mobile
+          </button>
+          <button class="filter-btn" data-filter="ml">
+            Machine Learning
+          </button>
+          <button class="filter-btn" data-filter="iot">
+            IoT &amp; Sistem
+          </button>
+          <button class="filter-btn" data-filter="uiux">
+            UI/UX
+          </button>
+        </div>
+      </div>
+
+      <!-- Projects Responsive Grid -->
+      <div class="projects-grid" id="projects-grid" aria-live="polite"></div>
+
+      <nav class="project-pagination" id="project-pagination" aria-label="Pagination katalog proyek" hidden></nav>
+
+    </section>
+
+
+  </main>
+
+  <!-- ========================================================
+       FOOTER
+       ======================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="brand-wrapper" style="margin-bottom: 0.5rem;">
+            <span class="brand-logo">Ilio</span>
+            <span class="cohort-tag" style="background-color: var(--color-surface-container); color: var(--color-on-surface-variant);">
+              UNSOED 2026
+            </span>
+          </div>
+          <p style="max-width: 400px;">
+            Modern student portfolio and research showcase platform for Informatics undergraduate cohorts at Universitas Jenderal Soedirman.
+          </p>
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-title">Sekretariat</span>
+          <p>Jurusan Informatika UNSOED</p>
+          <p>Purwokerto, Jawa Tengah</p>
+          <p>Indonesia</p>
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-title">Kontak</span>
+          <a href="mailto:informatics@unsoed.ac.id">
+            informatics@unsoed.ac.id
+          </a>
+          <p>Fakultas Teknik</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ilio Informatics Universitas Jenderal Soedirman. All rights reserved.</p>
+        <div>
+          <span>Angkatan 2026</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================
+       SCRIPTS: VANILLA JAVASCRIPT (ES6+)
+       ======================================================== -->
+  <script src="script.js" defer></script>
+</body>
+</html>
