@@ -45,13 +45,10 @@ Untuk menjalankan proyek ini di lingkungan lokal (local server seperti XAMPP/Lar
 
 | Nama | Peran / Tugas | Profil GitHub |
 | :--- | :--- | :--- |
-| **Fauzan Ristian** | Project Manager | [@fauzan](https://github.com/) |
-| **Satria Adidarma Herrinta** | Lead Developer | [@satria](https://github.com/) |
-| **Khiranni Celia Saputri** | UI/UX Designer | [@celia](https://github.com/) |
-| **Metta Dwi Waskithaning Dyah Ayu** | UI/UX Designer | [@metta](https://github.com/) |
+| **Fauzan Ristian** | Project Manager | [@fauzan](https://github.com/Fa-rain) |
+| **Satria Adidarma Herrinta** | Lead Developer | [@satria](https://github.com/Satriadarma3) |
+| **Khiranni Celia Saputri** | UI/UX Designer | [@celia](https://github.com/khiranCelia) |
+| **Metta Dwi Waskithaning Dyah Ayu** | UI/UX Designer | [@metta](https://github.com/mettaayu) |
 
 ---
 
-<p center="align">
-  <i>Dibuat dengan ❤️ oleh Mahasiswa Informatika UNSOED.</i>
-</p>
